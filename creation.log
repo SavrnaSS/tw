@@ -1,0 +1,576 @@
+2025-07-07 15:29:38,878 - INFO - ====== WebDriver manager ======
+2025-07-07 15:29:39,035 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-07 15:29:39,183 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-07 15:29:39,340 - INFO - Driver [/Users/sumitsingh/.wdm/drivers/chromedriver/mac64/138.0.7204.92/chromedriver-mac-arm64/chromedriver] found in cache
+2025-07-07 15:29:39,341 - INFO - Using default request storage
+2025-07-07 15:29:39,358 - INFO - Created proxy listening on ::ffff:127.0.0.1:52372
+2025-07-07 15:29:40,048 - INFO - Capturing request: http://clients2.google.com/time/1/current?cup2key=9:q6BB3YK8K1E_hDhCm5Q6vUMoWOpv5uATRqB3qXvpClU&cup2hreq=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2025-07-07 15:29:40,071 - INFO - Browser driver initialized in headless mode.
+2025-07-07 15:29:40,071 - INFO - Testing proxy connection (via requests)...
+2025-07-07 15:29:40,665 - INFO - Capturing response: http://clients2.google.com/time/1/current?cup2key=9:q6BB3YK8K1E_hDhCm5Q6vUMoWOpv5uATRqB3qXvpClU&cup2hreq=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 200 OK
+2025-07-07 15:29:40,724 - INFO - Proxy is working. IP (via requests): 82.23.71.176
+2025-07-07 15:29:40,724 - INFO - Checking browser IP via Selenium...
+2025-07-07 15:29:41,209 - INFO - Capturing request: https://accounts.google.com/ListAccounts?gpsia=1&source=ChromiumBrowser&json=standard
+2025-07-07 15:29:41,367 - INFO - Capturing request: https://api.ipify.org/?format=json
+2025-07-07 15:29:41,511 - INFO - Capturing response: https://accounts.google.com/ListAccounts?gpsia=1&source=ChromiumBrowser&json=standard 200 
+2025-07-07 15:29:41,647 - INFO - Capturing response: https://api.ipify.org/?format=json 200 
+2025-07-07 15:29:41,703 - INFO - Browser IP confirmed: {"ip":"82.23.71.176"}
+2025-07-07 15:29:41,703 - INFO - Generated email alias: Emily.Williams53@deepictures.com
+2025-07-07 15:29:41,785 - INFO - Capturing request: https://api.ipify.org/favicon.ico
+2025-07-07 15:29:42,065 - INFO - Capturing response: https://api.ipify.org/favicon.ico 404 
+2025-07-07 15:29:42,706 - INFO - Created Cloudflare Email Address: Emily.Williams53@deepictures.com
+2025-07-07 15:29:43,873 - INFO - Capturing request: https://android.clients.google.com/checkin
+2025-07-07 15:29:44,257 - INFO - Capturing response: https://android.clients.google.com/checkin 200 
+2025-07-07 15:29:44,267 - INFO - Capturing request: https://android.clients.google.com/c2dm/register3
+2025-07-07 15:29:44,273 - INFO - Capturing request: https://android.clients.google.com/c2dm/register3
+2025-07-07 15:29:44,605 - INFO - Deleted forwarding rule: f500e3de91844109962143f4bab87af2
+2025-07-07 15:29:44,621 - INFO - Capturing response: https://android.clients.google.com/c2dm/register3 301 
+2025-07-07 15:29:45,573 - INFO - Created forwarding rule: Emily.Williams53@deepictures.com ➝ savarnasumit@gmail.com
+2025-07-07 15:29:46,263 - INFO - Capturing response: https://android.clients.google.com/c2dm/register3 200 
+2025-07-07 15:29:46,334 - INFO - Capturing request: https://twitter.com/i/flow/signup
+2025-07-07 15:29:46,660 - INFO - Capturing response: https://twitter.com/i/flow/signup 400 
+2025-07-07 15:29:46,820 - INFO - Capturing request: https://twitter.com/favicon.ico
+2025-07-07 15:29:47,104 - INFO - Capturing response: https://twitter.com/favicon.ico 200 
+2025-07-07 15:29:50,058 - INFO - No CAPTCHA detected.
+2025-07-07 15:29:50,483 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=AIzaSyDr2UxVnv_U85AbhhY8XSHSIavUW0DC-sY
+2025-07-07 15:29:50,680 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=AIzaSyDr2UxVnv_U85AbhhY8XSHSIavUW0DC-sY 200 
+2025-07-07 15:29:51,343 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1679317318&target=OPTIMIZATION_TARGET_LANGUAGE_DETECTION
+2025-07-07 15:29:51,345 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1745312779&target=OPTIMIZATION_TARGET_NOTIFICATION_PERMISSION_PREDICTIONS
+2025-07-07 15:29:51,615 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1745312779&target=OPTIMIZATION_TARGET_NOTIFICATION_PERMISSION_PREDICTIONS 200 
+2025-07-07 15:29:51,836 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1673999601&target=OPTIMIZATION_TARGET_PAGE_VISIBILITY
+2025-07-07 15:29:53,356 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1679317318&target=OPTIMIZATION_TARGET_LANGUAGE_DETECTION 200 
+2025-07-07 15:29:53,482 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=5&target=OPTIMIZATION_TARGET_PAGE_TOPICS_V2
+2025-07-07 15:30:00,082 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1673999601&target=OPTIMIZATION_TARGET_PAGE_VISIBILITY 200 
+2025-07-07 15:30:00,228 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1745311339&target=OPTIMIZATION_TARGET_GEOLOCATION_PERMISSION_PREDICTIONS
+2025-07-07 15:30:01,021 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1745311339&target=OPTIMIZATION_TARGET_GEOLOCATION_PERMISSION_PREDICTIONS 200 
+2025-07-07 15:30:01,143 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1728324084&target=OPTIMIZATION_TARGET_OMNIBOX_ON_DEVICE_TAIL_SUGGEST
+2025-07-07 15:30:13,828 - INFO - Capturing request: https://android.clients.google.com/c2dm/register3
+2025-07-07 15:30:14,118 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=5&target=OPTIMIZATION_TARGET_PAGE_TOPICS_V2 200 
+2025-07-07 15:30:14,291 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1749567812&target=OPTIMIZATION_TARGET_CLIENT_SIDE_PHISHING
+2025-07-07 15:30:14,347 - INFO - Capturing response: https://android.clients.google.com/c2dm/register3 301 
+2025-07-07 15:30:16,825 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1749567812&target=OPTIMIZATION_TARGET_CLIENT_SIDE_PHISHING
+2025-07-07 15:30:16,827 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1728324084&target=OPTIMIZATION_TARGET_OMNIBOX_ON_DEVICE_TAIL_SUGGEST
+2025-07-07 15:30:40,698 - INFO - Capturing request: https://update.googleapis.com/service/update2/json?cup2key=15:BlJIHjJUNYt5NzkOSTdOowT1Lg1pgHGT7Of3sGTya9I&cup2hreq=7866e86c23e28e68d3ddaa5c9e34bd3e0ffdf0082f8047dae7502b3760930ee4
+2025-07-07 15:30:40,907 - INFO - Capturing response: https://update.googleapis.com/service/update2/json?cup2key=15:BlJIHjJUNYt5NzkOSTdOowT1Lg1pgHGT7Of3sGTya9I&cup2hreq=7866e86c23e28e68d3ddaa5c9e34bd3e0ffdf0082f8047dae7502b3760930ee4 200 
+2025-07-07 15:30:40,921 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/acpeapixpwuzscfa5h5j5m7c4xaa_2025.6.16.0/niikhdgajlphfehepabhhblakbdgeefj_2025.06.16.00_all_acgsomx5qtwgffxcrxwhoksfom7q.crx3
+2025-07-07 15:30:41,262 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/acpeapixpwuzscfa5h5j5m7c4xaa_2025.6.16.0/niikhdgajlphfehepabhhblakbdgeefj_2025.06.16.00_all_acgsomx5qtwgffxcrxwhoksfom7q.crx3 200 OK
+2025-07-07 15:30:41,332 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 15:30:41,528 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 15:30:41,958 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/aevtvjsxpcrwhjvp5w32fej6zq_9.56.0/gcmjkmgdlgnkkcocmoeiminaijmmjnii_9.56.0_all_acq3rupi4ymeq53so4pzqroatfea.crx3
+2025-07-07 15:30:42,555 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/aevtvjsxpcrwhjvp5w32fej6zq_9.56.0/gcmjkmgdlgnkkcocmoeiminaijmmjnii_9.56.0_all_acq3rupi4ymeq53so4pzqroatfea.crx3 200 OK
+2025-07-07 15:30:42,628 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 15:30:42,817 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 15:30:42,826 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/acdvcifl2ztime6bsz3eijtcfeaq_2025.5.15.1/kiabhabjdbkjdpjbpigfodbdjmbglcoo_2025.05.15.01_all_ehum5zzx5qnqq3vyyhyi6ytrfq.crx3
+2025-07-07 15:30:43,164 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/acdvcifl2ztime6bsz3eijtcfeaq_2025.5.15.1/kiabhabjdbkjdpjbpigfodbdjmbglcoo_2025.05.15.01_all_ehum5zzx5qnqq3vyyhyi6ytrfq.crx3 200 OK
+2025-07-07 15:30:43,226 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 15:30:43,418 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 15:30:43,836 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/diffgen-puffin/obedbbhbpmojnkanicioggnmelmoomoc/148e1f3187d39113ec7fc4b6549b10dece6b49bb1f7ab4ed93899f0ddf0216bc
+2025-07-07 15:30:45,080 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1728324084&target=OPTIMIZATION_TARGET_OMNIBOX_ON_DEVICE_TAIL_SUGGEST 200 
+2025-07-07 15:30:45,260 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1696268326&target=OPTIMIZATION_TARGET_OMNIBOX_URL_SCORING
+2025-07-07 15:30:46,935 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/diffgen-puffin/obedbbhbpmojnkanicioggnmelmoomoc/148e1f3187d39113ec7fc4b6549b10dece6b49bb1f7ab4ed93899f0ddf0216bc 200 OK
+2025-07-07 15:30:47,263 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 15:30:47,457 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 15:30:47,670 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1696268326&target=OPTIMIZATION_TARGET_OMNIBOX_URL_SCORING 200 
+2025-07-07 15:30:47,898 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=240731042075&target=OPTIMIZATION_TARGET_SEGMENTATION_COMPOSE_PROMOTION
+2025-07-07 15:30:51,309 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/aci4tgetj5klez3k76o6bwefsixq_521/lmelglejhemejginpboagddgdfbepgmp_521_all_ZZ_p3axobbxzkb2zl2kj5d2md3jwy.crx3
+2025-07-07 15:30:51,345 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=240731042075&target=OPTIMIZATION_TARGET_SEGMENTATION_COMPOSE_PROMOTION 200 
+2025-07-07 15:30:52,592 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/aci4tgetj5klez3k76o6bwefsixq_521/lmelglejhemejginpboagddgdfbepgmp_521_all_ZZ_p3axobbxzkb2zl2kj5d2md3jwy.crx3 200 OK
+2025-07-07 15:30:52,665 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 15:30:52,852 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 15:30:58,067 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/b7lfcixm2uxl44obg6p3qes5ai_9906/hfnkpimlhhgieaddgfemjhofmfblmnib_9906_all_keitofkydkwowmgxkit6rk2mtu.crx3
+2025-07-07 15:30:59,306 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/b7lfcixm2uxl44obg6p3qes5ai_9906/hfnkpimlhhgieaddgfemjhofmfblmnib_9906_all_keitofkydkwowmgxkit6rk2mtu.crx3 200 OK
+2025-07-07 15:30:59,377 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 15:30:59,571 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 15:31:01,687 - INFO - Capturing request: https://android.clients.google.com/c2dm/register3
+2025-07-07 15:31:02,139 - INFO - Capturing response: https://android.clients.google.com/c2dm/register3 301 
+2025-07-07 15:31:04,875 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1749567812&target=OPTIMIZATION_TARGET_CLIENT_SIDE_PHISHING 200 
+2025-07-07 15:31:06,107 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/V3P1l2hLvLw_7/7_all_sslErrorAssistant.crx3
+2025-07-07 15:31:06,474 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/V3P1l2hLvLw_7/7_all_sslErrorAssistant.crx3 200 OK
+2025-07-07 15:31:07,130 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 15:31:07,325 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 15:31:07,391 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1749567812&target=OPTIMIZATION_TARGET_CLIENT_SIDE_PHISHING 200 
+2025-07-07 15:31:08,562 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1728324084&target=OPTIMIZATION_TARGET_OMNIBOX_ON_DEVICE_TAIL_SUGGEST 200 
+2025-07-07 15:31:08,569 - INFO - ::ffff:127.0.0.1:52411: ProtocolException('Error in HTTP connection: TcpDisconnect("(32, \'EPIPE\')")')
+2025-07-07 15:31:14,300 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/chromewebstore/L2Nocm9tZV9leHRlbnNpb24vYmxvYnMvYjhkYWYwZDctOTExOS00MGQ5LTgyNjAtN2FlY2ZjMDg0NmNj/1.0.0.17_llkgjffcdpffmhiakmfcdcblohccpfmo.crx
+2025-07-07 15:31:14,646 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/chromewebstore/L2Nocm9tZV9leHRlbnNpb24vYmxvYnMvYjhkYWYwZDctOTExOS00MGQ5LTgyNjAtN2FlY2ZjMDg0NmNj/1.0.0.17_llkgjffcdpffmhiakmfcdcblohccpfmo.crx 200 OK
+2025-07-07 15:31:14,706 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 15:31:14,905 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 15:31:22,295 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/diffgen-puffin/jflookgnkcckhobaglndicnbbgbonegd/24d8f2a77c62bd08fad820e97346a7712ee4a07c61e1ba1c03894117d260b7f2
+2025-07-07 15:31:23,020 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/diffgen-puffin/jflookgnkcckhobaglndicnbbgbonegd/24d8f2a77c62bd08fad820e97346a7712ee4a07c61e1ba1c03894117d260b7f2 200 OK
+2025-07-07 15:31:23,120 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 15:31:23,311 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 15:31:31,535 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/acosyn4g5b3yx5o3himek6yp7amq_67/khaoiebndkojlmppeemjhbpbandiljpe_67_mac_acu6btsbkzo3kci4lca6ycyxgf6q.crx3
+2025-07-07 15:31:31,916 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/acosyn4g5b3yx5o3himek6yp7amq_67/khaoiebndkojlmppeemjhbpbandiljpe_67_mac_acu6btsbkzo3kci4lca6ycyxgf6q.crx3 200 OK
+2025-07-07 15:31:31,985 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 15:31:32,177 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 15:31:40,859 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/j2hxfei2occ5siitujtlwgp6xi_3/ojhpjlocmbogdgmfpkhlaaeamibhnphh_3_all_gplutbkdljxxbjolk3siq7kive.crx3
+2025-07-07 15:31:42,437 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/j2hxfei2occ5siitujtlwgp6xi_3/ojhpjlocmbogdgmfpkhlaaeamibhnphh_3_all_gplutbkdljxxbjolk3siq7kive.crx3 200 OK
+2025-07-07 15:31:42,515 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 15:31:42,711 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 15:31:53,059 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/lnu3li27zsanbe2hcsfjuvm5fq_1.0.7.1744928549/laoigpblnllgcgjnjnllmfolckpjlhki_1.0.7.1744928549_all_ady56p6vtubsna6mhkx6lu2qml3a.crx3
+2025-07-07 15:31:53,397 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/lnu3li27zsanbe2hcsfjuvm5fq_1.0.7.1744928549/laoigpblnllgcgjnjnllmfolckpjlhki_1.0.7.1744928549_all_ady56p6vtubsna6mhkx6lu2qml3a.crx3 200 OK
+2025-07-07 15:31:53,463 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 15:31:53,654 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 15:32:04,416 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/fpm7b3lyymiazxgd7zkf5fvmra_2024.10.17.0/pmagihnlncbcefglppponlgakiphldeh_2024.10.17.00_all_adqfgeiodwxstiamlm6umtwem5nq.crx3
+2025-07-07 15:32:05,421 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/fpm7b3lyymiazxgd7zkf5fvmra_2024.10.17.0/pmagihnlncbcefglppponlgakiphldeh_2024.10.17.00_all_adqfgeiodwxstiamlm6umtwem5nq.crx3 200 OK
+2025-07-07 15:32:05,494 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 15:32:05,685 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 15:32:17,533 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/ac6ci5mwrvihfwmuttvglzv6q75a_2024.11.26.0/mcfjlbnicoclaecapilmleaelokfnijm_2024.11.26.0_all_do5eyaqjmaujuqh6egr6ybx4mu.crx3
+2025-07-07 15:32:17,939 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/ac6ci5mwrvihfwmuttvglzv6q75a_2024.11.26.0/mcfjlbnicoclaecapilmleaelokfnijm_2024.11.26.0_all_do5eyaqjmaujuqh6egr6ybx4mu.crx3 200 OK
+2025-07-07 15:32:18,007 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 15:32:18,249 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 15:32:30,580 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/diffgen-puffin/ggkkehgbnfjpeggfpleeakpidbkibbmn/2d1e70501a73ad10f881aefddfa822166db386329230f526dc2b3bff4b15d842
+2025-07-07 15:32:31,359 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/diffgen-puffin/ggkkehgbnfjpeggfpleeakpidbkibbmn/2d1e70501a73ad10f881aefddfa822166db386329230f526dc2b3bff4b15d842 200 OK
+2025-07-07 15:32:31,464 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 15:32:31,659 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 15:32:43,878 - INFO - Capturing request: https://android.clients.google.com/c2dm/register3
+2025-07-07 15:32:44,297 - INFO - Capturing response: https://android.clients.google.com/c2dm/register3 301 
+2025-07-07 15:32:44,883 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/diffgen-puffin/eeigpngbgcognadeebkilcpcaedhellh/c7f7ea7e08d298a80765a4487523560228a6b60c4ff767480b2e91fc313de154
+2025-07-07 15:32:45,749 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/diffgen-puffin/eeigpngbgcognadeebkilcpcaedhellh/c7f7ea7e08d298a80765a4487523560228a6b60c4ff767480b2e91fc313de154 200 OK
+2025-07-07 15:32:45,891 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 15:32:46,112 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 15:33:00,350 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/ad6bqrogtrdeb2aualzvp3izob2a_3/hajigopbbjhghbfimgkfmpenfkclmohk_3_all_acvntnsfjuuxi3fmeykewq3kivfq.crx3
+2025-07-07 15:33:00,696 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/ad6bqrogtrdeb2aualzvp3izob2a_3/hajigopbbjhghbfimgkfmpenfkclmohk_3_all_acvntnsfjuuxi3fmeykewq3kivfq.crx3 200 OK
+2025-07-07 15:33:00,762 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 15:33:00,953 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 15:33:15,614 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/c4zrbcnnjvpqv5bd4hjhgghcoa_1363/efniojlnjndmcbiieegkicadnoecjjef_1363_all_p4r42lr7a6g4cyhwq2fe6k26di.crx3
+2025-07-07 15:33:16,775 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/c4zrbcnnjvpqv5bd4hjhgghcoa_1363/efniojlnjndmcbiieegkicadnoecjjef_1363_all_p4r42lr7a6g4cyhwq2fe6k26di.crx3 200 OK
+2025-07-07 15:33:16,842 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 15:33:17,037 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 15:33:32,935 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/diffgen-puffin/ldfkbgjbencjpgjfleiooeldhjdapggh/970590ea3c1c4e4c0be9f47e4a4cc24a65ec1f9d3d4d87da26cf9c66e009bc8b
+2025-07-07 15:33:33,271 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/diffgen-puffin/ldfkbgjbencjpgjfleiooeldhjdapggh/970590ea3c1c4e4c0be9f47e4a4cc24a65ec1f9d3d4d87da26cf9c66e009bc8b 200 OK
+2025-07-07 15:33:34,021 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 15:33:34,276 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 15:33:50,618 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/diffgen-puffin/jflhchccmppkfebkiaminageehmchikm/3bd5ec1836b52ecd7b325b7f42ff537d201e2b81046233564ab1448dba0be6fd
+2025-07-07 15:33:51,335 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/diffgen-puffin/jflhchccmppkfebkiaminageehmchikm/3bd5ec1836b52ecd7b325b7f42ff537d201e2b81046233564ab1448dba0be6fd 200 OK
+2025-07-07 15:33:51,429 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 15:33:51,615 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 15:34:08,771 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/ngifsy4k4mu7bcrdyhc4vjaocy_2025.4.2.0/gonpemdgkjcecdgbnaabipppbmgfggbe_2025.04.02.00_all_adnkhxd45xqajkfutwmwv6agl33q.crx3
+2025-07-07 15:34:09,128 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/ngifsy4k4mu7bcrdyhc4vjaocy_2025.4.2.0/gonpemdgkjcecdgbnaabipppbmgfggbe_2025.04.02.00_all_adnkhxd45xqajkfutwmwv6agl33q.crx3 200 OK
+2025-07-07 15:34:09,194 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 15:34:09,377 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 15:34:51,722 - ERROR - Unable to locate 'Create account' button.
+2025-07-07 15:34:51,723 - ERROR - Error during account creation: Message: ❌ Unable to locate 'Create account' button.
+
+2025-07-07 15:34:51,863 - INFO - Browser closed. Starting fresh for next account...
+2025-07-07 15:35:01,869 - INFO - ====== WebDriver manager ======
+2025-07-07 15:35:02,097 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-07 15:35:02,287 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-07 15:35:02,465 - INFO - Driver [/Users/sumitsingh/.wdm/drivers/chromedriver/mac64/138.0.7204.92/chromedriver-mac-arm64/chromedriver] found in cache
+2025-07-07 15:35:02,466 - INFO - Using default request storage
+2025-07-07 15:35:02,484 - INFO - Created proxy listening on ::ffff:127.0.0.1:52502
+2025-07-07 15:35:03,660 - INFO - Capturing request: http://clients2.google.com/time/1/current?cup2key=9:IcOUgG6CvAD5q3_RAWsxB78NCmxYnzwzaCg40vrK2YE&cup2hreq=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2025-07-07 15:35:03,732 - INFO - Browser driver initialized in headless mode.
+2025-07-07 15:35:03,732 - INFO - Testing proxy connection (via requests)...
+2025-07-07 15:44:19,697 - INFO - ====== WebDriver manager ======
+2025-07-07 15:44:19,948 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-07 15:44:20,132 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-07 15:44:20,303 - INFO - Driver [/Users/sumitsingh/.wdm/drivers/chromedriver/mac64/138.0.7204.92/chromedriver-mac-arm64/chromedriver] found in cache
+2025-07-07 15:44:20,304 - INFO - Using default request storage
+2025-07-07 15:44:20,313 - INFO - Created proxy listening on ::ffff:127.0.0.1:52572
+2025-07-07 15:44:21,403 - INFO - Capturing request: http://clients2.google.com/time/1/current?cup2key=9:WljWb-9XGQeiAHwZg3kxfUTooxoeattuinMc0hw2Ojc&cup2hreq=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2025-07-07 15:44:21,497 - INFO - Browser driver initialized in headless mode.
+2025-07-07 15:44:21,497 - INFO - Testing proxy connection (via requests)...
+2025-07-07 15:44:22,046 - INFO - Capturing response: http://clients2.google.com/time/1/current?cup2key=9:WljWb-9XGQeiAHwZg3kxfUTooxoeattuinMc0hw2Ojc&cup2hreq=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 200 OK
+2025-07-07 15:44:22,180 - INFO - Proxy is working. IP (via requests): 82.23.71.176
+2025-07-07 15:44:22,181 - INFO - Checking browser IP via Selenium...
+2025-07-07 15:44:22,615 - INFO - Capturing request: https://accounts.google.com/ListAccounts?gpsia=1&source=ChromiumBrowser&json=standard
+2025-07-07 15:44:22,890 - INFO - Capturing request: https://api.ipify.org/?format=json
+2025-07-07 15:44:22,957 - INFO - Capturing response: https://accounts.google.com/ListAccounts?gpsia=1&source=ChromiumBrowser&json=standard 200 
+2025-07-07 15:44:23,206 - INFO - Capturing response: https://api.ipify.org/?format=json 200 
+2025-07-07 15:44:23,284 - INFO - Browser IP confirmed: {"ip":"82.23.71.176"}
+2025-07-07 15:44:23,284 - INFO - Generated email alias: Prunkesh.Alona25@deepictures.com
+2025-07-07 15:44:23,361 - INFO - Capturing request: https://api.ipify.org/favicon.ico
+2025-07-07 15:44:23,665 - INFO - Capturing response: https://api.ipify.org/favicon.ico 404 
+2025-07-07 15:44:24,260 - INFO - Created Cloudflare Email Address: Prunkesh.Alona25@deepictures.com
+2025-07-07 15:44:25,906 - INFO - Capturing request: https://android.clients.google.com/checkin
+2025-07-07 15:44:26,029 - INFO - Deleted forwarding rule: a1101e15ba094b6e943426823d1477a1
+2025-07-07 15:44:26,292 - INFO - Capturing response: https://android.clients.google.com/checkin 200 
+2025-07-07 15:44:26,302 - INFO - Capturing request: https://android.clients.google.com/c2dm/register3
+2025-07-07 15:44:26,309 - INFO - Capturing request: https://android.clients.google.com/c2dm/register3
+2025-07-07 15:44:26,703 - INFO - Capturing response: https://android.clients.google.com/c2dm/register3 301 
+2025-07-07 15:44:26,914 - INFO - Created forwarding rule: Prunkesh.Alona25@deepictures.com ➝ savarnasumit@gmail.com
+2025-07-07 15:44:27,640 - INFO - Capturing request: https://twitter.com/i/flow/signup
+2025-07-07 15:44:27,983 - INFO - Capturing response: https://twitter.com/i/flow/signup 400 
+2025-07-07 15:44:28,148 - INFO - Capturing request: https://twitter.com/favicon.ico
+2025-07-07 15:44:28,415 - INFO - Capturing response: https://android.clients.google.com/c2dm/register3 200 
+2025-07-07 15:44:28,436 - INFO - Capturing response: https://twitter.com/favicon.ico 200 
+2025-07-07 15:44:31,314 - INFO - No CAPTCHA detected.
+2025-07-07 15:44:31,740 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=AIzaSyDr2UxVnv_U85AbhhY8XSHSIavUW0DC-sY
+2025-07-07 15:44:31,973 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=AIzaSyDr2UxVnv_U85AbhhY8XSHSIavUW0DC-sY 200 
+2025-07-07 15:44:32,653 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1745312779&target=OPTIMIZATION_TARGET_NOTIFICATION_PERMISSION_PREDICTIONS
+2025-07-07 15:44:32,658 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1679317318&target=OPTIMIZATION_TARGET_LANGUAGE_DETECTION
+2025-07-07 15:44:32,978 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1745312779&target=OPTIMIZATION_TARGET_NOTIFICATION_PERMISSION_PREDICTIONS 200 
+2025-07-07 15:44:33,297 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1673999601&target=OPTIMIZATION_TARGET_PAGE_VISIBILITY
+2025-07-07 15:44:35,385 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1679317318&target=OPTIMIZATION_TARGET_LANGUAGE_DETECTION 200 
+2025-07-07 15:44:35,511 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=5&target=OPTIMIZATION_TARGET_PAGE_TOPICS_V2
+2025-07-07 15:44:44,675 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1673999601&target=OPTIMIZATION_TARGET_PAGE_VISIBILITY 200 
+2025-07-07 15:44:44,818 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1745311339&target=OPTIMIZATION_TARGET_GEOLOCATION_PERMISSION_PREDICTIONS
+2025-07-07 15:44:45,637 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1745311339&target=OPTIMIZATION_TARGET_GEOLOCATION_PERMISSION_PREDICTIONS 200 
+2025-07-07 15:44:45,754 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1728324084&target=OPTIMIZATION_TARGET_OMNIBOX_ON_DEVICE_TAIL_SUGGEST
+2025-07-07 15:44:50,481 - INFO - Capturing request: https://android.clients.google.com/c2dm/register3
+2025-07-07 15:44:50,843 - INFO - Capturing response: https://android.clients.google.com/c2dm/register3 301 
+2025-07-07 15:44:58,155 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1728324084&target=OPTIMIZATION_TARGET_OMNIBOX_ON_DEVICE_TAIL_SUGGEST
+2025-07-07 15:44:58,158 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=5&target=OPTIMIZATION_TARGET_PAGE_TOPICS_V2
+2025-07-07 15:44:58,863 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=5&target=OPTIMIZATION_TARGET_PAGE_TOPICS_V2 200 
+2025-07-07 15:44:59,032 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1749567812&target=OPTIMIZATION_TARGET_CLIENT_SIDE_PHISHING
+2025-07-07 15:45:21,997 - INFO - Capturing request: https://update.googleapis.com/service/update2/json?cup2key=15:VfwzDcpK_qQdVFYWs1zhsk_Mp6blQuz-NvblJb6gZn8&cup2hreq=ddc3c803815e2dbfaa63d8eb22db6432cb21f7411b41f3ceaae8caeb73635470
+2025-07-07 15:45:22,189 - INFO - Capturing response: https://update.googleapis.com/service/update2/json?cup2key=15:VfwzDcpK_qQdVFYWs1zhsk_Mp6blQuz-NvblJb6gZn8&cup2hreq=ddc3c803815e2dbfaa63d8eb22db6432cb21f7411b41f3ceaae8caeb73635470 200 
+2025-07-07 15:45:22,205 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/chromewebstore/L2Nocm9tZV9leHRlbnNpb24vYmxvYnMvYjhkYWYwZDctOTExOS00MGQ5LTgyNjAtN2FlY2ZjMDg0NmNj/1.0.0.17_llkgjffcdpffmhiakmfcdcblohccpfmo.crx
+2025-07-07 15:45:22,532 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/chromewebstore/L2Nocm9tZV9leHRlbnNpb24vYmxvYnMvYjhkYWYwZDctOTExOS00MGQ5LTgyNjAtN2FlY2ZjMDg0NmNj/1.0.0.17_llkgjffcdpffmhiakmfcdcblohccpfmo.crx 200 OK
+2025-07-07 15:45:22,602 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 15:45:22,786 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 15:45:32,774 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1728324084&target=OPTIMIZATION_TARGET_OMNIBOX_ON_DEVICE_TAIL_SUGGEST 200 
+2025-07-07 15:45:32,957 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1696268326&target=OPTIMIZATION_TARGET_OMNIBOX_URL_SCORING
+2025-07-07 15:45:34,360 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1696268326&target=OPTIMIZATION_TARGET_OMNIBOX_URL_SCORING 200 
+2025-07-07 15:45:34,484 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=240731042075&target=OPTIMIZATION_TARGET_SEGMENTATION_COMPOSE_PROMOTION
+2025-07-07 15:45:37,751 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=240731042075&target=OPTIMIZATION_TARGET_SEGMENTATION_COMPOSE_PROMOTION 200 
+2025-07-07 15:45:40,361 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=5&target=OPTIMIZATION_TARGET_PAGE_TOPICS_V2 200 
+2025-07-07 15:45:43,179 - INFO - Capturing request: https://android.clients.google.com/c2dm/register3
+2025-07-07 15:45:43,620 - INFO - Capturing response: https://android.clients.google.com/c2dm/register3 301 
+2025-07-07 15:45:46,583 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1749567812&target=OPTIMIZATION_TARGET_CLIENT_SIDE_PHISHING 200 
+2025-07-07 15:45:47,393 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1728324084&target=OPTIMIZATION_TARGET_OMNIBOX_ON_DEVICE_TAIL_SUGGEST 200 
+2025-07-07 15:47:17,349 - INFO - Capturing request: https://android.clients.google.com/c2dm/register3
+2025-07-07 15:47:17,723 - INFO - Capturing response: https://android.clients.google.com/c2dm/register3 301 
+2025-07-07 15:49:33,070 - ERROR - Unable to locate 'Create account' button.
+2025-07-07 15:49:33,071 - ERROR - Error during account creation: Message: ❌ Unable to locate 'Create account' button.
+
+2025-07-07 15:49:33,172 - INFO - Browser closed. Starting fresh for next account...
+2025-07-07 15:49:43,178 - INFO - ====== WebDriver manager ======
+2025-07-07 15:49:43,397 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-07 15:49:43,586 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-07 15:49:43,744 - INFO - Driver [/Users/sumitsingh/.wdm/drivers/chromedriver/mac64/138.0.7204.92/chromedriver-mac-arm64/chromedriver] found in cache
+2025-07-07 15:49:43,745 - INFO - Using default request storage
+2025-07-07 15:49:43,759 - INFO - Created proxy listening on ::ffff:127.0.0.1:52647
+2025-07-07 15:49:44,637 - INFO - Capturing request: http://clients2.google.com/time/1/current?cup2key=9:Imtqv6L6Jzhc5FvOkeV-u3qP0CNjgQxrOnkPYHvX_4Q&cup2hreq=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2025-07-07 15:49:44,653 - INFO - Browser driver initialized in headless mode.
+2025-07-07 15:49:44,653 - INFO - Testing proxy connection (via requests)...
+2025-07-07 15:49:45,336 - INFO - Capturing response: http://clients2.google.com/time/1/current?cup2key=9:Imtqv6L6Jzhc5FvOkeV-u3qP0CNjgQxrOnkPYHvX_4Q&cup2hreq=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 200 OK
+2025-07-07 15:49:45,400 - INFO - Proxy is working. IP (via requests): 82.23.71.176
+2025-07-07 15:49:45,400 - INFO - Checking browser IP via Selenium...
+2025-07-07 15:49:45,907 - INFO - Capturing request: https://accounts.google.com/ListAccounts?gpsia=1&source=ChromiumBrowser&json=standard
+2025-07-07 15:49:46,100 - INFO - Capturing request: https://api.ipify.org/?format=json
+2025-07-07 15:49:46,236 - INFO - Capturing response: https://accounts.google.com/ListAccounts?gpsia=1&source=ChromiumBrowser&json=standard 200 
+2025-07-07 15:49:46,424 - INFO - Capturing response: https://api.ipify.org/?format=json 200 
+2025-07-07 15:49:46,480 - INFO - Browser IP confirmed: {"ip":"82.23.71.176"}
+2025-07-07 15:49:46,481 - INFO - Generated email alias: Meena.Davis11@deepictures.com
+2025-07-07 15:49:46,567 - INFO - Capturing request: https://api.ipify.org/favicon.ico
+2025-07-07 15:49:46,871 - INFO - Capturing response: https://api.ipify.org/favicon.ico 404 
+2025-07-07 15:49:47,655 - INFO - Created Cloudflare Email Address: Meena.Davis11@deepictures.com
+2025-07-07 15:49:48,625 - INFO - Capturing request: https://android.clients.google.com/checkin
+2025-07-07 15:49:49,005 - INFO - Capturing response: https://android.clients.google.com/checkin 200 
+2025-07-07 15:49:49,010 - INFO - Capturing request: https://android.clients.google.com/c2dm/register3
+2025-07-07 15:49:49,011 - INFO - Capturing request: https://android.clients.google.com/c2dm/register3
+2025-07-07 15:49:49,356 - INFO - Deleted forwarding rule: da410c6614344cec9af1f24d0036a149
+2025-07-07 15:49:49,386 - INFO - Capturing response: https://android.clients.google.com/c2dm/register3 200 
+2025-07-07 15:49:49,431 - INFO - Capturing response: https://android.clients.google.com/c2dm/register3 200 
+2025-07-07 15:49:50,620 - ERROR - Failed to create forwarding rule: {
+  "result": null,
+  "success": false,
+  "errors": [
+    {
+      "code": 2014,
+      "message": "Duplicated Zone rule"
+    }
+  ],
+  "messages": [
+    {
+      "code": 2014,
+      "message": "Duplicated Zone rule"
+    }
+  ]
+}
+
+2025-07-07 15:49:51,303 - INFO - Capturing request: https://twitter.com/i/flow/signup
+2025-07-07 15:49:51,651 - INFO - Capturing response: https://twitter.com/i/flow/signup 400 
+2025-07-07 15:49:51,813 - INFO - Capturing request: https://twitter.com/favicon.ico
+2025-07-07 15:49:52,101 - INFO - Capturing response: https://twitter.com/favicon.ico 200 
+2025-07-07 15:49:55,054 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=AIzaSyDr2UxVnv_U85AbhhY8XSHSIavUW0DC-sY
+2025-07-07 15:49:55,247 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=AIzaSyDr2UxVnv_U85AbhhY8XSHSIavUW0DC-sY 200 
+2025-07-07 15:49:55,515 - INFO - No CAPTCHA detected.
+2025-07-07 15:49:55,869 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1679317318&target=OPTIMIZATION_TARGET_LANGUAGE_DETECTION
+2025-07-07 15:49:55,870 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1745312779&target=OPTIMIZATION_TARGET_NOTIFICATION_PERMISSION_PREDICTIONS
+2025-07-07 15:49:56,131 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1745312779&target=OPTIMIZATION_TARGET_NOTIFICATION_PERMISSION_PREDICTIONS 200 
+2025-07-07 15:49:56,367 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1673999601&target=OPTIMIZATION_TARGET_PAGE_VISIBILITY
+2025-07-07 15:49:57,824 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1679317318&target=OPTIMIZATION_TARGET_LANGUAGE_DETECTION 200 
+2025-07-07 15:49:57,950 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=5&target=OPTIMIZATION_TARGET_PAGE_TOPICS_V2
+2025-07-07 15:50:04,543 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1673999601&target=OPTIMIZATION_TARGET_PAGE_VISIBILITY 200 
+2025-07-07 15:50:04,684 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1745311339&target=OPTIMIZATION_TARGET_GEOLOCATION_PERMISSION_PREDICTIONS
+2025-07-07 15:50:05,467 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1745311339&target=OPTIMIZATION_TARGET_GEOLOCATION_PERMISSION_PREDICTIONS 200 
+2025-07-07 15:50:05,582 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1728324084&target=OPTIMIZATION_TARGET_OMNIBOX_ON_DEVICE_TAIL_SUGGEST
+2025-07-07 15:50:13,645 - INFO - Capturing request: https://android.clients.google.com/c2dm/register3
+2025-07-07 15:50:14,035 - INFO - Capturing response: https://android.clients.google.com/c2dm/register3 301 
+2025-07-07 15:50:15,044 - INFO - Capturing request: https://android.clients.google.com/c2dm/register3
+2025-07-07 15:50:17,132 - INFO - Capturing response: https://android.clients.google.com/c2dm/register3 200 
+2025-07-07 15:50:20,209 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=5&target=OPTIMIZATION_TARGET_PAGE_TOPICS_V2 200 
+2025-07-07 15:50:20,372 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1749567812&target=OPTIMIZATION_TARGET_CLIENT_SIDE_PHISHING
+2025-07-07 15:50:21,817 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1749567812&target=OPTIMIZATION_TARGET_CLIENT_SIDE_PHISHING
+2025-07-07 15:50:21,818 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1728324084&target=OPTIMIZATION_TARGET_OMNIBOX_ON_DEVICE_TAIL_SUGGEST
+2025-07-07 15:50:45,257 - INFO - Capturing request: https://update.googleapis.com/service/update2/json?cup2key=15:PqLaDZWQ6kXWA5fDjb2R9cUdko8XVXX8-khQSiz0lW4&cup2hreq=7727fcd04808aab9fedea669724fdd4b03c40ebbc4dc4dea533bd5229463ff27
+2025-07-07 15:50:45,461 - INFO - Capturing response: https://update.googleapis.com/service/update2/json?cup2key=15:PqLaDZWQ6kXWA5fDjb2R9cUdko8XVXX8-khQSiz0lW4&cup2hreq=7727fcd04808aab9fedea669724fdd4b03c40ebbc4dc4dea533bd5229463ff27 200 
+2025-07-07 15:50:45,474 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/chromewebstore/L2Nocm9tZV9leHRlbnNpb24vYmxvYnMvYjhkYWYwZDctOTExOS00MGQ5LTgyNjAtN2FlY2ZjMDg0NmNj/1.0.0.17_llkgjffcdpffmhiakmfcdcblohccpfmo.crx
+2025-07-07 15:50:45,813 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/chromewebstore/L2Nocm9tZV9leHRlbnNpb24vYmxvYnMvYjhkYWYwZDctOTExOS00MGQ5LTgyNjAtN2FlY2ZjMDg0NmNj/1.0.0.17_llkgjffcdpffmhiakmfcdcblohccpfmo.crx 200 OK
+2025-07-07 15:50:45,880 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 15:50:46,069 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 15:50:48,447 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1728324084&target=OPTIMIZATION_TARGET_OMNIBOX_ON_DEVICE_TAIL_SUGGEST 200 
+2025-07-07 15:50:48,607 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1696268326&target=OPTIMIZATION_TARGET_OMNIBOX_URL_SCORING
+2025-07-07 15:50:50,017 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1696268326&target=OPTIMIZATION_TARGET_OMNIBOX_URL_SCORING 200 
+2025-07-07 15:50:50,137 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=240731042075&target=OPTIMIZATION_TARGET_SEGMENTATION_COMPOSE_PROMOTION
+2025-07-07 15:50:53,248 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=240731042075&target=OPTIMIZATION_TARGET_SEGMENTATION_COMPOSE_PROMOTION 200 
+2025-07-07 15:50:57,020 - INFO - Capturing request: https://android.clients.google.com/c2dm/register3
+2025-07-07 15:50:57,450 - INFO - Capturing response: https://android.clients.google.com/c2dm/register3 301 
+2025-07-07 15:51:06,123 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1749567812&target=OPTIMIZATION_TARGET_CLIENT_SIDE_PHISHING 200 
+2025-07-07 15:51:07,963 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1749567812&target=OPTIMIZATION_TARGET_CLIENT_SIDE_PHISHING 200 
+2025-07-07 15:51:08,881 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1728324084&target=OPTIMIZATION_TARGET_OMNIBOX_ON_DEVICE_TAIL_SUGGEST 200 
+2025-07-07 15:52:56,729 - INFO - Capturing request: https://android.clients.google.com/c2dm/register3
+2025-07-07 15:52:57,115 - INFO - Capturing response: https://android.clients.google.com/c2dm/register3 301 
+2025-07-07 15:53:46,243 - INFO - ::ffff:127.0.0.1:52665: HTTP/2 connection terminated by server: error code: 0, last stream id: 201, additional data: b'session_timed_out'
+2025-07-07 15:53:55,242 - INFO - ::ffff:127.0.0.1:52683: HTTP/2 connection terminated by server: error code: 0, last stream id: 201, additional data: b'session_timed_out'
+2025-07-07 15:54:46,150 - INFO - ::ffff:127.0.0.1:52694: HTTP/2 connection terminated by server: error code: 0, last stream id: 203, additional data: b'session_timed_out'
+2025-07-07 15:54:57,302 - ERROR - Unable to locate 'Create account' button.
+2025-07-07 15:54:57,302 - ERROR - Error during account creation: Message: ❌ Unable to locate 'Create account' button.
+
+2025-07-07 15:54:57,402 - INFO - Browser closed. Starting fresh for next account...
+2025-07-07 15:55:07,408 - INFO - ====== WebDriver manager ======
+2025-07-07 15:55:07,615 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-07 15:55:07,778 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-07 15:55:07,950 - INFO - Driver [/Users/sumitsingh/.wdm/drivers/chromedriver/mac64/138.0.7204.92/chromedriver-mac-arm64/chromedriver] found in cache
+2025-07-07 15:55:07,951 - INFO - Using default request storage
+2025-07-07 15:55:07,961 - INFO - Created proxy listening on ::ffff:127.0.0.1:52723
+2025-07-07 15:55:08,652 - INFO - Capturing request: http://clients2.google.com/time/1/current?cup2key=9:HVhR2bCRU5tjH9H4AHShWmwH39fc4C2qbz72yqytAHE&cup2hreq=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2025-07-07 15:55:08,675 - INFO - Browser driver initialized in headless mode.
+2025-07-07 15:55:08,675 - INFO - Testing proxy connection (via requests)...
+2025-07-07 15:55:09,305 - INFO - Capturing response: http://clients2.google.com/time/1/current?cup2key=9:HVhR2bCRU5tjH9H4AHShWmwH39fc4C2qbz72yqytAHE&cup2hreq=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 200 OK
+2025-07-07 15:55:09,373 - INFO - Proxy is working. IP (via requests): 82.23.71.176
+2025-07-07 15:55:09,374 - INFO - Checking browser IP via Selenium...
+2025-07-07 15:55:09,869 - INFO - Capturing request: https://accounts.google.com/ListAccounts?gpsia=1&source=ChromiumBrowser&json=standard
+2025-07-07 15:55:10,017 - INFO - Capturing request: https://api.ipify.org/?format=json
+2025-07-07 15:55:10,200 - INFO - Capturing response: https://accounts.google.com/ListAccounts?gpsia=1&source=ChromiumBrowser&json=standard 200 
+2025-07-07 15:55:10,309 - INFO - Capturing response: https://api.ipify.org/?format=json 200 
+2025-07-07 15:55:10,364 - INFO - Browser IP confirmed: {"ip":"82.23.71.176"}
+2025-07-07 15:55:10,364 - INFO - Generated email alias: Meena.Brown76@deepictures.com
+2025-07-07 15:55:10,449 - INFO - Capturing request: https://api.ipify.org/favicon.ico
+2025-07-07 15:55:10,739 - INFO - Capturing response: https://api.ipify.org/favicon.ico 404 
+2025-07-07 15:55:11,648 - INFO - Created Cloudflare Email Address: Meena.Brown76@deepictures.com
+2025-07-07 15:55:12,621 - INFO - Capturing request: https://android.clients.google.com/checkin
+2025-07-07 15:55:12,977 - INFO - Capturing response: https://android.clients.google.com/checkin 200 
+2025-07-07 15:55:12,988 - INFO - Capturing request: https://android.clients.google.com/c2dm/register3
+2025-07-07 15:55:12,992 - INFO - Capturing request: https://android.clients.google.com/c2dm/register3
+2025-07-07 15:55:13,314 - INFO - Capturing response: https://android.clients.google.com/c2dm/register3 200 
+2025-07-07 15:55:13,351 - INFO - Capturing response: https://android.clients.google.com/c2dm/register3 200 
+2025-07-07 15:55:13,435 - INFO - Deleted forwarding rule: 4c7fd4708bc544a590d76548f053418e
+2025-07-07 15:55:14,415 - INFO - Created forwarding rule: Meena.Brown76@deepictures.com ➝ savarnasumit@gmail.com
+2025-07-07 15:55:15,138 - INFO - Capturing request: https://twitter.com/i/flow/signup
+2025-07-07 15:55:15,501 - INFO - Capturing response: https://twitter.com/i/flow/signup 400 
+2025-07-07 15:55:15,653 - INFO - Capturing request: https://twitter.com/favicon.ico
+2025-07-07 15:55:15,948 - INFO - Capturing response: https://twitter.com/favicon.ico 200 
+2025-07-07 15:55:19,043 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=AIzaSyDr2UxVnv_U85AbhhY8XSHSIavUW0DC-sY
+2025-07-07 15:55:19,218 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=AIzaSyDr2UxVnv_U85AbhhY8XSHSIavUW0DC-sY 200 
+2025-07-07 15:55:19,849 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1745312779&target=OPTIMIZATION_TARGET_NOTIFICATION_PERMISSION_PREDICTIONS
+2025-07-07 15:55:19,851 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1679317318&target=OPTIMIZATION_TARGET_LANGUAGE_DETECTION
+2025-07-07 15:55:20,422 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1745312779&target=OPTIMIZATION_TARGET_NOTIFICATION_PERMISSION_PREDICTIONS 200 
+2025-07-07 15:55:20,558 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1673999601&target=OPTIMIZATION_TARGET_PAGE_VISIBILITY
+2025-07-07 15:55:21,722 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1679317318&target=OPTIMIZATION_TARGET_LANGUAGE_DETECTION 200 
+2025-07-07 15:55:21,849 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=5&target=OPTIMIZATION_TARGET_PAGE_TOPICS_V2
+2025-07-07 15:55:22,069 - INFO - No CAPTCHA detected.
+2025-07-07 15:55:29,085 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1673999601&target=OPTIMIZATION_TARGET_PAGE_VISIBILITY 200 
+2025-07-07 15:55:29,234 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1745311339&target=OPTIMIZATION_TARGET_GEOLOCATION_PERMISSION_PREDICTIONS
+2025-07-07 15:55:30,043 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1745311339&target=OPTIMIZATION_TARGET_GEOLOCATION_PERMISSION_PREDICTIONS 200 
+2025-07-07 15:55:30,167 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1728324084&target=OPTIMIZATION_TARGET_OMNIBOX_ON_DEVICE_TAIL_SUGGEST
+2025-07-07 15:55:33,452 - INFO - Capturing request: https://android.clients.google.com/c2dm/register3
+2025-07-07 15:55:35,676 - INFO - Capturing response: https://android.clients.google.com/c2dm/register3 200 
+2025-07-07 15:55:37,291 - INFO - Capturing request: https://android.clients.google.com/c2dm/register3
+2025-07-07 15:55:37,654 - INFO - Capturing response: https://android.clients.google.com/c2dm/register3 301 
+2025-07-07 15:55:42,674 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=5&target=OPTIMIZATION_TARGET_PAGE_TOPICS_V2 200 
+2025-07-07 15:55:42,850 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1749567812&target=OPTIMIZATION_TARGET_CLIENT_SIDE_PHISHING
+2025-07-07 15:55:45,694 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1728324084&target=OPTIMIZATION_TARGET_OMNIBOX_ON_DEVICE_TAIL_SUGGEST
+2025-07-07 15:55:45,698 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1749567812&target=OPTIMIZATION_TARGET_CLIENT_SIDE_PHISHING
+2025-07-07 15:56:09,246 - INFO - Capturing request: https://update.googleapis.com/service/update2/json?cup2key=15:sOTDkZknWtnBizxY-4X8Otl7pj_LeWi2IuCgk4WzfQA&cup2hreq=427a5ff129c2cc5b7d47746ddc79622ebab9c42432c5c28d1f6ee07f380655d0
+2025-07-07 15:56:09,437 - INFO - Capturing response: https://update.googleapis.com/service/update2/json?cup2key=15:sOTDkZknWtnBizxY-4X8Otl7pj_LeWi2IuCgk4WzfQA&cup2hreq=427a5ff129c2cc5b7d47746ddc79622ebab9c42432c5c28d1f6ee07f380655d0 200 
+2025-07-07 15:56:09,449 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/chromewebstore/L2Nocm9tZV9leHRlbnNpb24vYmxvYnMvYjhkYWYwZDctOTExOS00MGQ5LTgyNjAtN2FlY2ZjMDg0NmNj/1.0.0.17_llkgjffcdpffmhiakmfcdcblohccpfmo.crx
+2025-07-07 15:56:09,815 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/chromewebstore/L2Nocm9tZV9leHRlbnNpb24vYmxvYnMvYjhkYWYwZDctOTExOS00MGQ5LTgyNjAtN2FlY2ZjMDg0NmNj/1.0.0.17_llkgjffcdpffmhiakmfcdcblohccpfmo.crx 200 OK
+2025-07-07 15:56:09,881 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 15:56:10,065 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 15:56:12,459 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1728324084&target=OPTIMIZATION_TARGET_OMNIBOX_ON_DEVICE_TAIL_SUGGEST 200 
+2025-07-07 15:56:12,638 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1696268326&target=OPTIMIZATION_TARGET_OMNIBOX_URL_SCORING
+2025-07-07 15:56:14,089 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1696268326&target=OPTIMIZATION_TARGET_OMNIBOX_URL_SCORING 200 
+2025-07-07 15:56:14,213 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=240731042075&target=OPTIMIZATION_TARGET_SEGMENTATION_COMPOSE_PROMOTION
+2025-07-07 15:56:17,471 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=240731042075&target=OPTIMIZATION_TARGET_SEGMENTATION_COMPOSE_PROMOTION 200 
+2025-07-07 15:56:23,931 - INFO - Capturing request: https://android.clients.google.com/c2dm/register3
+2025-07-07 15:56:24,296 - INFO - Capturing response: https://android.clients.google.com/c2dm/register3 301 
+2025-07-07 15:56:29,993 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1749567812&target=OPTIMIZATION_TARGET_CLIENT_SIDE_PHISHING 200 
+2025-07-07 15:56:33,319 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1749567812&target=OPTIMIZATION_TARGET_CLIENT_SIDE_PHISHING 200 
+2025-07-07 15:56:34,292 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1728324084&target=OPTIMIZATION_TARGET_OMNIBOX_ON_DEVICE_TAIL_SUGGEST 200 
+2025-07-07 15:58:17,246 - INFO - Capturing request: https://android.clients.google.com/c2dm/register3
+2025-07-07 15:58:17,620 - INFO - Capturing response: https://android.clients.google.com/c2dm/register3 301 
+2025-07-07 15:59:10,242 - INFO - ::ffff:127.0.0.1:52741: HTTP/2 connection terminated by server: error code: 0, last stream id: 201, additional data: b'session_timed_out'
+2025-07-07 15:59:19,251 - INFO - ::ffff:127.0.0.1:52759: HTTP/2 connection terminated by server: error code: 0, last stream id: 201, additional data: b'session_timed_out'
+2025-07-07 16:00:10,067 - INFO - ::ffff:127.0.0.1:52768: HTTP/2 connection terminated by server: error code: 0, last stream id: 203, additional data: b'session_timed_out'
+2025-07-07 16:00:17,192 - INFO - ====== WebDriver manager ======
+2025-07-07 16:00:17,349 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-07 16:00:24,509 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-07 16:00:24,667 - INFO - Driver [/Users/sumitsingh/.wdm/drivers/chromedriver/mac64/138.0.7204.92/chromedriver-mac-arm64/chromedriver] found in cache
+2025-07-07 16:00:24,668 - INFO - Using default request storage
+2025-07-07 16:00:24,681 - INFO - Created proxy listening on ::ffff:127.0.0.1:52801
+2025-07-07 16:00:25,553 - INFO - Capturing request: http://clients2.google.com/time/1/current?cup2key=9:E_DdTIAJw4Sj99t0fkHJobhTA3mvhKeBlCnF1HRSkrY&cup2hreq=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2025-07-07 16:00:25,571 - INFO - Browser driver initialized in headless mode.
+2025-07-07 16:00:25,571 - INFO - Testing proxy connection (via requests)...
+2025-07-07 16:00:26,339 - INFO - Capturing response: http://clients2.google.com/time/1/current?cup2key=9:E_DdTIAJw4Sj99t0fkHJobhTA3mvhKeBlCnF1HRSkrY&cup2hreq=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 200 OK
+2025-07-07 16:00:26,358 - INFO - Proxy is working. IP (via requests): 82.23.71.176
+2025-07-07 16:00:26,358 - INFO - Checking browser IP via Selenium...
+2025-07-07 16:00:26,925 - INFO - Capturing request: https://accounts.google.com/ListAccounts?gpsia=1&source=ChromiumBrowser&json=standard
+2025-07-07 16:00:27,037 - INFO - Capturing request: https://api.ipify.org/?format=json
+2025-07-07 16:00:27,286 - INFO - Capturing response: https://accounts.google.com/ListAccounts?gpsia=1&source=ChromiumBrowser&json=standard 200 
+2025-07-07 16:00:27,303 - INFO - Capturing response: https://api.ipify.org/?format=json 200 
+2025-07-07 16:00:27,348 - INFO - Browser IP confirmed: {"ip":"82.23.71.176"}
+2025-07-07 16:00:27,348 - INFO - Generated email alias: Alex.Brown51@deepictures.com
+2025-07-07 16:00:27,437 - INFO - Capturing request: https://api.ipify.org/favicon.ico
+2025-07-07 16:00:27,725 - INFO - Capturing response: https://api.ipify.org/favicon.ico 404 
+2025-07-07 16:00:28,476 - INFO - Created Cloudflare Email Address: Alex.Brown51@deepictures.com
+2025-07-07 16:00:29,566 - INFO - Capturing request: https://android.clients.google.com/checkin
+2025-07-07 16:00:29,975 - INFO - Capturing response: https://android.clients.google.com/checkin 200 
+2025-07-07 16:00:29,984 - INFO - Capturing request: https://android.clients.google.com/c2dm/register3
+2025-07-07 16:00:29,992 - INFO - Capturing request: https://android.clients.google.com/c2dm/register3
+2025-07-07 16:00:30,197 - INFO - Deleted forwarding rule: ea2df5b3ba2849e9997212aa0a103e8c
+2025-07-07 16:00:30,354 - INFO - Capturing response: https://android.clients.google.com/c2dm/register3 200 
+2025-07-07 16:00:30,362 - INFO - Capturing response: https://android.clients.google.com/c2dm/register3 200 
+2025-07-07 16:00:31,141 - INFO - Created forwarding rule: Alex.Brown51@deepictures.com ➝ savarnasumit@gmail.com
+2025-07-07 16:00:31,801 - INFO - Capturing request: https://twitter.com/i/flow/signup
+2025-07-07 16:00:32,143 - INFO - Capturing response: https://twitter.com/i/flow/signup 400 
+2025-07-07 16:00:32,303 - INFO - Capturing request: https://twitter.com/favicon.ico
+2025-07-07 16:00:32,580 - INFO - Capturing response: https://twitter.com/favicon.ico 200 
+2025-07-07 16:00:35,457 - INFO - No CAPTCHA detected.
+2025-07-07 16:00:35,998 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=AIzaSyDr2UxVnv_U85AbhhY8XSHSIavUW0DC-sY
+2025-07-07 16:00:36,288 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=AIzaSyDr2UxVnv_U85AbhhY8XSHSIavUW0DC-sY 200 
+2025-07-07 16:00:36,975 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1745312779&target=OPTIMIZATION_TARGET_NOTIFICATION_PERMISSION_PREDICTIONS
+2025-07-07 16:00:36,977 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1679317318&target=OPTIMIZATION_TARGET_LANGUAGE_DETECTION
+2025-07-07 16:00:37,410 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1745312779&target=OPTIMIZATION_TARGET_NOTIFICATION_PERMISSION_PREDICTIONS 200 
+2025-07-07 16:00:37,567 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1673999601&target=OPTIMIZATION_TARGET_PAGE_VISIBILITY
+2025-07-07 16:00:39,111 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1679317318&target=OPTIMIZATION_TARGET_LANGUAGE_DETECTION 200 
+2025-07-07 16:00:39,236 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=5&target=OPTIMIZATION_TARGET_PAGE_TOPICS_V2
+2025-07-07 16:00:46,500 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1673999601&target=OPTIMIZATION_TARGET_PAGE_VISIBILITY 200 
+2025-07-07 16:00:46,643 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1745311339&target=OPTIMIZATION_TARGET_GEOLOCATION_PERMISSION_PREDICTIONS
+2025-07-07 16:00:47,509 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1745311339&target=OPTIMIZATION_TARGET_GEOLOCATION_PERMISSION_PREDICTIONS 200 
+2025-07-07 16:00:47,624 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1728324084&target=OPTIMIZATION_TARGET_OMNIBOX_ON_DEVICE_TAIL_SUGGEST
+2025-07-07 16:00:53,730 - INFO - Capturing request: https://android.clients.google.com/c2dm/register3
+2025-07-07 16:00:55,960 - INFO - Capturing response: https://android.clients.google.com/c2dm/register3 200 
+2025-07-07 16:00:57,853 - INFO - Capturing request: https://android.clients.google.com/c2dm/register3
+2025-07-07 16:00:58,297 - INFO - Capturing response: https://android.clients.google.com/c2dm/register3 301 
+2025-07-07 16:01:01,114 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=5&target=OPTIMIZATION_TARGET_PAGE_TOPICS_V2 200 
+2025-07-07 16:01:01,282 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1749567812&target=OPTIMIZATION_TARGET_CLIENT_SIDE_PHISHING
+2025-07-07 16:01:02,312 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1728324084&target=OPTIMIZATION_TARGET_OMNIBOX_ON_DEVICE_TAIL_SUGGEST
+2025-07-07 16:01:02,315 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1749567812&target=OPTIMIZATION_TARGET_CLIENT_SIDE_PHISHING
+2025-07-07 16:01:26,119 - INFO - Capturing request: https://update.googleapis.com/service/update2/json?cup2key=15:HCPVCf6-ON9JUgmJskwFsIcKIbr3Um_0wz3MDOzNLwc&cup2hreq=4a1f1bc6fa91bf0f913cbcfeba9321a3ad0b95d8606fada2ee3c74f4ccb7b718
+2025-07-07 16:01:26,320 - INFO - Capturing response: https://update.googleapis.com/service/update2/json?cup2key=15:HCPVCf6-ON9JUgmJskwFsIcKIbr3Um_0wz3MDOzNLwc&cup2hreq=4a1f1bc6fa91bf0f913cbcfeba9321a3ad0b95d8606fada2ee3c74f4ccb7b718 200 
+2025-07-07 16:01:26,333 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/acpeapixpwuzscfa5h5j5m7c4xaa_2025.6.16.0/niikhdgajlphfehepabhhblakbdgeefj_2025.06.16.00_all_acgsomx5qtwgffxcrxwhoksfom7q.crx3
+2025-07-07 16:01:26,669 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/acpeapixpwuzscfa5h5j5m7c4xaa_2025.6.16.0/niikhdgajlphfehepabhhblakbdgeefj_2025.06.16.00_all_acgsomx5qtwgffxcrxwhoksfom7q.crx3 200 OK
+2025-07-07 16:01:26,735 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 16:01:26,911 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 16:01:26,920 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/diffgen-puffin/obedbbhbpmojnkanicioggnmelmoomoc/7448d21b4a4d8d47838731d6baae2c0f819099fe0420ab5a1ea4c750c89462e9
+2025-07-07 16:01:29,758 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/diffgen-puffin/obedbbhbpmojnkanicioggnmelmoomoc/7448d21b4a4d8d47838731d6baae2c0f819099fe0420ab5a1ea4c750c89462e9 200 OK
+2025-07-07 16:01:30,078 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 16:01:30,250 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 16:01:33,429 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/aci4tgetj5klez3k76o6bwefsixq_521/lmelglejhemejginpboagddgdfbepgmp_521_all_ZZ_p3axobbxzkb2zl2kj5d2md3jwy.crx3
+2025-07-07 16:01:33,703 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1728324084&target=OPTIMIZATION_TARGET_OMNIBOX_ON_DEVICE_TAIL_SUGGEST 200 
+2025-07-07 16:01:33,895 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=1696268326&target=OPTIMIZATION_TARGET_OMNIBOX_URL_SCORING
+2025-07-07 16:01:34,509 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/aci4tgetj5klez3k76o6bwefsixq_521/lmelglejhemejginpboagddgdfbepgmp_521_all_ZZ_p3axobbxzkb2zl2kj5d2md3jwy.crx3 200 OK
+2025-07-07 16:01:34,581 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 16:01:34,757 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 16:01:34,766 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/V3P1l2hLvLw_7/7_all_sslErrorAssistant.crx3
+2025-07-07 16:01:35,127 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/V3P1l2hLvLw_7/7_all_sslErrorAssistant.crx3 200 OK
+2025-07-07 16:01:35,189 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 16:01:35,351 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1696268326&target=OPTIMIZATION_TARGET_OMNIBOX_URL_SCORING 200 
+2025-07-07 16:01:35,483 - INFO - Capturing request: https://optimizationguide-pa.googleapis.com/downloads?name=240731042075&target=OPTIMIZATION_TARGET_SEGMENTATION_COMPOSE_PROMOTION
+2025-07-07 16:01:35,507 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 16:01:35,948 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/aevtvjsxpcrwhjvp5w32fej6zq_9.56.0/gcmjkmgdlgnkkcocmoeiminaijmmjnii_9.56.0_all_acq3rupi4ymeq53so4pzqroatfea.crx3
+2025-07-07 16:01:36,529 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/aevtvjsxpcrwhjvp5w32fej6zq_9.56.0/gcmjkmgdlgnkkcocmoeiminaijmmjnii_9.56.0_all_acq3rupi4ymeq53so4pzqroatfea.crx3 200 OK
+2025-07-07 16:01:36,598 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 16:01:36,773 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 16:01:37,872 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/acosyn4g5b3yx5o3himek6yp7amq_67/khaoiebndkojlmppeemjhbpbandiljpe_67_mac_acu6btsbkzo3kci4lca6ycyxgf6q.crx3
+2025-07-07 16:01:38,217 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/acosyn4g5b3yx5o3himek6yp7amq_67/khaoiebndkojlmppeemjhbpbandiljpe_67_mac_acu6btsbkzo3kci4lca6ycyxgf6q.crx3 200 OK
+2025-07-07 16:01:38,281 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 16:01:38,453 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 16:01:39,080 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=240731042075&target=OPTIMIZATION_TARGET_SEGMENTATION_COMPOSE_PROMOTION 200 
+2025-07-07 16:01:39,969 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/chromewebstore/L2Nocm9tZV9leHRlbnNpb24vYmxvYnMvYjhkYWYwZDctOTExOS00MGQ5LTgyNjAtN2FlY2ZjMDg0NmNj/1.0.0.17_llkgjffcdpffmhiakmfcdcblohccpfmo.crx
+2025-07-07 16:01:40,304 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/chromewebstore/L2Nocm9tZV9leHRlbnNpb24vYmxvYnMvYjhkYWYwZDctOTExOS00MGQ5LTgyNjAtN2FlY2ZjMDg0NmNj/1.0.0.17_llkgjffcdpffmhiakmfcdcblohccpfmo.crx 200 OK
+2025-07-07 16:01:40,372 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 16:01:40,545 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 16:01:42,474 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/acdvcifl2ztime6bsz3eijtcfeaq_2025.5.15.1/kiabhabjdbkjdpjbpigfodbdjmbglcoo_2025.05.15.01_all_ehum5zzx5qnqq3vyyhyi6ytrfq.crx3
+2025-07-07 16:01:42,806 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/acdvcifl2ztime6bsz3eijtcfeaq_2025.5.15.1/kiabhabjdbkjdpjbpigfodbdjmbglcoo_2025.05.15.01_all_ehum5zzx5qnqq3vyyhyi6ytrfq.crx3 200 OK
+2025-07-07 16:01:42,871 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 16:01:43,042 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 16:01:45,376 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/diffgen-puffin/ggkkehgbnfjpeggfpleeakpidbkibbmn/2d1e70501a73ad10f881aefddfa822166db386329230f526dc2b3bff4b15d842
+2025-07-07 16:01:46,057 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/diffgen-puffin/ggkkehgbnfjpeggfpleeakpidbkibbmn/2d1e70501a73ad10f881aefddfa822166db386329230f526dc2b3bff4b15d842 200 OK
+2025-07-07 16:01:46,157 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 16:01:46,326 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 16:01:49,448 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/j2hxfei2occ5siitujtlwgp6xi_3/ojhpjlocmbogdgmfpkhlaaeamibhnphh_3_all_gplutbkdljxxbjolk3siq7kive.crx3
+2025-07-07 16:01:50,817 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/j2hxfei2occ5siitujtlwgp6xi_3/ojhpjlocmbogdgmfpkhlaaeamibhnphh_3_all_gplutbkdljxxbjolk3siq7kive.crx3 200 OK
+2025-07-07 16:01:50,902 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 16:01:51,070 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 16:01:52,619 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1749567812&target=OPTIMIZATION_TARGET_CLIENT_SIDE_PHISHING 200 
+2025-07-07 16:01:53,250 - INFO - Capturing request: https://android.clients.google.com/c2dm/register3
+2025-07-07 16:01:53,651 - INFO - Capturing response: https://android.clients.google.com/c2dm/register3 301 
+2025-07-07 16:01:54,320 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1749567812&target=OPTIMIZATION_TARGET_CLIENT_SIDE_PHISHING 200 
+2025-07-07 16:01:55,494 - INFO - Capturing response: https://optimizationguide-pa.googleapis.com/downloads?name=1728324084&target=OPTIMIZATION_TARGET_OMNIBOX_ON_DEVICE_TAIL_SUGGEST 200 
+2025-07-07 16:01:55,649 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/diffgen-puffin/jflookgnkcckhobaglndicnbbgbonegd/24d8f2a77c62bd08fad820e97346a7712ee4a07c61e1ba1c03894117d260b7f2
+2025-07-07 16:01:56,421 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/diffgen-puffin/jflookgnkcckhobaglndicnbbgbonegd/24d8f2a77c62bd08fad820e97346a7712ee4a07c61e1ba1c03894117d260b7f2 200 OK
+2025-07-07 16:01:56,521 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 16:01:56,694 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 16:02:02,155 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/b7lfcixm2uxl44obg6p3qes5ai_9906/hfnkpimlhhgieaddgfemjhofmfblmnib_9906_all_keitofkydkwowmgxkit6rk2mtu.crx3
+2025-07-07 16:02:03,389 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/b7lfcixm2uxl44obg6p3qes5ai_9906/hfnkpimlhhgieaddgfemjhofmfblmnib_9906_all_keitofkydkwowmgxkit6rk2mtu.crx3 200 OK
+2025-07-07 16:02:03,462 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 16:02:03,633 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 16:02:10,411 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/diffgen-puffin/eeigpngbgcognadeebkilcpcaedhellh/c7f7ea7e08d298a80765a4487523560228a6b60c4ff767480b2e91fc313de154
+2025-07-07 16:02:11,173 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/diffgen-puffin/eeigpngbgcognadeebkilcpcaedhellh/c7f7ea7e08d298a80765a4487523560228a6b60c4ff767480b2e91fc313de154 200 OK
+2025-07-07 16:02:11,883 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 16:02:12,065 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 16:02:19,756 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/fpm7b3lyymiazxgd7zkf5fvmra_2024.10.17.0/pmagihnlncbcefglppponlgakiphldeh_2024.10.17.00_all_adqfgeiodwxstiamlm6umtwem5nq.crx3
+2025-07-07 16:02:20,665 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/fpm7b3lyymiazxgd7zkf5fvmra_2024.10.17.0/pmagihnlncbcefglppponlgakiphldeh_2024.10.17.00_all_adqfgeiodwxstiamlm6umtwem5nq.crx3 200 OK
+2025-07-07 16:02:20,741 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 16:02:21,024 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 16:02:29,710 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/diffgen-puffin/jflhchccmppkfebkiaminageehmchikm/3bd5ec1836b52ecd7b325b7f42ff537d201e2b81046233564ab1448dba0be6fd
+2025-07-07 16:02:30,051 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/diffgen-puffin/jflhchccmppkfebkiaminageehmchikm/3bd5ec1836b52ecd7b325b7f42ff537d201e2b81046233564ab1448dba0be6fd 200 OK
+2025-07-07 16:02:30,149 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 16:02:30,328 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 16:02:39,465 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/lnu3li27zsanbe2hcsfjuvm5fq_1.0.7.1744928549/laoigpblnllgcgjnjnllmfolckpjlhki_1.0.7.1744928549_all_ady56p6vtubsna6mhkx6lu2qml3a.crx3
+2025-07-07 16:02:39,825 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/lnu3li27zsanbe2hcsfjuvm5fq_1.0.7.1744928549/laoigpblnllgcgjnjnllmfolckpjlhki_1.0.7.1744928549_all_ady56p6vtubsna6mhkx6lu2qml3a.crx3 200 OK
+2025-07-07 16:02:39,889 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 16:02:40,175 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 16:02:49,744 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/ad6bqrogtrdeb2aualzvp3izob2a_3/hajigopbbjhghbfimgkfmpenfkclmohk_3_all_acvntnsfjuuxi3fmeykewq3kivfq.crx3
+2025-07-07 16:02:50,085 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/ad6bqrogtrdeb2aualzvp3izob2a_3/hajigopbbjhghbfimgkfmpenfkclmohk_3_all_acvntnsfjuuxi3fmeykewq3kivfq.crx3 200 OK
+2025-07-07 16:02:50,119 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 16:02:50,298 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 16:03:00,252 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/ac6ci5mwrvihfwmuttvglzv6q75a_2024.11.26.0/mcfjlbnicoclaecapilmleaelokfnijm_2024.11.26.0_all_do5eyaqjmaujuqh6egr6ybx4mu.crx3
+2025-07-07 16:03:00,625 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/ac6ci5mwrvihfwmuttvglzv6q75a_2024.11.26.0/mcfjlbnicoclaecapilmleaelokfnijm_2024.11.26.0_all_do5eyaqjmaujuqh6egr6ybx4mu.crx3 200 OK
+2025-07-07 16:03:00,693 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 16:03:00,871 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 16:03:11,277 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/c4zrbcnnjvpqv5bd4hjhgghcoa_1363/efniojlnjndmcbiieegkicadnoecjjef_1363_all_p4r42lr7a6g4cyhwq2fe6k26di.crx3
+2025-07-07 16:03:12,449 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/c4zrbcnnjvpqv5bd4hjhgghcoa_1363/efniojlnjndmcbiieegkicadnoecjjef_1363_all_p4r42lr7a6g4cyhwq2fe6k26di.crx3 200 OK
+2025-07-07 16:03:12,520 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 16:03:12,700 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 16:03:22,111 - INFO - Capturing request: https://android.clients.google.com/c2dm/register3
+2025-07-07 16:03:22,451 - INFO - Capturing response: https://android.clients.google.com/c2dm/register3 301 
+2025-07-07 16:03:24,360 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/diffgen-puffin/ldfkbgjbencjpgjfleiooeldhjdapggh/970590ea3c1c4e4c0be9f47e4a4cc24a65ec1f9d3d4d87da26cf9c66e009bc8b
+2025-07-07 16:03:24,720 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/diffgen-puffin/ldfkbgjbencjpgjfleiooeldhjdapggh/970590ea3c1c4e4c0be9f47e4a4cc24a65ec1f9d3d4d87da26cf9c66e009bc8b 200 OK
+2025-07-07 16:03:25,388 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 16:03:25,570 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 16:03:37,695 - INFO - Capturing request: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/ngifsy4k4mu7bcrdyhc4vjaocy_2025.4.2.0/gonpemdgkjcecdgbnaabipppbmgfggbe_2025.04.02.00_all_adnkhxd45xqajkfutwmwv6agl33q.crx3
+2025-07-07 16:03:38,051 - INFO - Capturing response: http://edgedl.me.gvt1.com/edgedl/release2/chrome_component/ngifsy4k4mu7bcrdyhc4vjaocy_2025.4.2.0/gonpemdgkjcecdgbnaabipppbmgfggbe_2025.04.02.00_all_adnkhxd45xqajkfutwmwv6agl33q.crx3 200 OK
+2025-07-07 16:03:38,119 - INFO - Capturing request: https://update.googleapis.com/service/update2/json
+2025-07-07 16:03:38,304 - INFO - Capturing response: https://update.googleapis.com/service/update2/json 200 
+2025-07-07 16:05:37,067 - ERROR - Unable to locate 'Create account' button.
+2025-07-07 16:05:37,068 - ERROR - Error during account creation: Message: ❌ Unable to locate 'Create account' button.
+
+2025-07-07 16:05:37,202 - INFO - Browser closed. Starting fresh for next account...
+2025-07-07 16:05:47,208 - INFO - ====== WebDriver manager ======
+2025-07-07 16:05:47,408 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-07 16:05:47,592 - INFO - Get LATEST chromedriver version for google-chrome
+2025-07-07 16:05:47,755 - INFO - Driver [/Users/sumitsingh/.wdm/drivers/chromedriver/mac64/138.0.7204.92/chromedriver-mac-arm64/chromedriver] found in cache
+2025-07-07 16:05:47,757 - INFO - Using default request storage
+2025-07-07 16:05:47,767 - INFO - Created proxy listening on ::ffff:127.0.0.1:52928
+2025-07-07 16:05:48,544 - INFO - Browser driver initialized in headless mode.
+2025-07-07 16:05:48,544 - INFO - Testing proxy connection (via requests)...
+2025-07-07 16:05:48,548 - INFO - Capturing request: http://clients2.google.com/time/1/current?cup2key=9:15lb8Zw22xF9WP2ja-DrPssaY5GE3OCTg_VCnLJEqow&cup2hreq=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2025-07-07 16:05:49,182 - INFO - Capturing response: http://clients2.google.com/time/1/current?cup2key=9:15lb8Zw22xF9WP2ja-DrPssaY5GE3OCTg_VCnLJEqow&cup2hreq=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 200 OK
+2025-07-07 16:05:49,230 - INFO - Proxy is working. IP (via requests): 82.23.71.176
+2025-07-07 16:05:49,231 - INFO - Checking browser IP via Selenium...
