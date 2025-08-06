@@ -9,7 +9,7 @@ import time
 import random
 import os
 from webdriver_manager.chrome import ChromeDriverManager
-
+ 
 def parse_credentials(file_path):
     """Parse the comp-cred.txt file into a list of account dictionaries."""
     accounts = []
@@ -30,8 +30,8 @@ def parse_credentials(file_path):
     return accounts
 
 def main():
-    # Parse accounts from comp-cred.txt
-    accounts = parse_credentials('comp-cred.txt')
+    # Parse accounts from credentials.txt
+    accounts = parse_credentials('credentials.txt')
     print(f"Found {len(accounts)} accounts to check.")
 
     # Set up Selenium with headed Chrome (visible UI)

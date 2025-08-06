@@ -63,8 +63,8 @@ GMAIL_PASSWORD = os.getenv("GMAIL_PASSWORD")  # Use an app password for Gmail
 IMAP_SERVER = "imap.gmail.com"
 
 # === PROXY CONFIGURATION ===
-PROXY_HOST = "82.29.140.45"
-PROXY_PORT = "7263"
+PROXY_HOST = "45.38.152.70"
+PROXY_PORT = "6304"
 PROXY_USER = "nftiuvfu"
 PROXY_PASS = "8ris7fu5rgrn"
 proxy_url = f"http://{PROXY_USER}:{PROXY_PASS}@{PROXY_HOST}:{PROXY_PORT}"

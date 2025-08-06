@@ -15,13 +15,14 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException, WebDriverException
 import email.utils
 import pyttsx3
+import threading
 
 load_dotenv()
 
 # === PROXY CONFIGURATION ===
-PROXY_HOST = "82.23.66.90"
-PROXY_PORT = "5347"
-PROXY_USER = "nftiuvfu"
+PROXY_HOST = "p.webshare.io"
+PROXY_PORT = "80"
+PROXY_USER = "nftiuvfu-rotate"
 PROXY_PASS = "8ris7fu5rgrn"
 proxy_url = f"http://{PROXY_USER}:{PROXY_PASS}@{PROXY_HOST}:{PROXY_PORT}"
 
@@ -38,7 +39,7 @@ IMAP_SERVER = "imap.gmail.com"
 
 # === Twitter & File Config ===
 TWITTER_PASSWORD = "948332@1EB"
-profile_picture_paths = [os.path.abspath(f"profileselfie/selfie_{i}.jpg") for i in range(1, 11)]
+profile_picture_paths = [os.path.abspath(f"profileselfie/selfie_{i}.jpg") for i in range(3, 10)]
 pic_index = 0
 BANNER_PICTURE_PATH = os.path.abspath("banner/selfie_7.jpg")
 
@@ -74,21 +75,44 @@ def check_browser_ip(driver):
     except Exception as e:
         print(f"❌ Could not determine browser IP: {e}")
 
-# ---------------------------
-# Selenium Wire Setup with Proxy
-# ---------------------------
 def setup_driver():
     seleniumwire_options = {
         'proxy': {'http': proxy_url, 'https': proxy_url, 'no_proxy': 'localhost,127.0.0.1'}
     }
+
     chrome_options = webdriver.ChromeOptions()
-    chrome_options.add_argument("--start-maximized")
     chrome_options.add_argument("--disable-blink-features=AutomationControlled")
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),
-                              seleniumwire_options=seleniumwire_options,
-                              options=chrome_options)
-    print("🖥️ Browser driver initialized.")
-    return driver
+
+    driver_path = os.path.join(os.getcwd(), "chromedriver")
+
+    try:
+        driver = webdriver.Chrome(
+            service=Service(driver_path),
+            seleniumwire_options=seleniumwire_options,
+            options=chrome_options
+        )
+
+        print("🖥️ ChromeDriver launched in full desktop mode.")
+
+        # ✅ Background thread to resize at 1 min and revert at 2 min
+        def resize_timeline():
+            try:
+                time.sleep(26)
+                driver.set_window_size(375, 812)
+                print("📏 Resized to mobile-like width after 1 minute.")
+
+                time.sleep(150)
+                driver.maximize_window()  # back to full screen
+                print("🖥️ Restored to full desktop view after 2 minutes.")
+            except Exception as e:
+                print(f"⚠️ Resize error: {e}")
+
+        threading.Thread(target=resize_timeline, daemon=True).start()
+
+        return driver
+    except Exception as e:
+        raise Exception(f"❌ Failed to launch ChromeDriver: {e}")
+
 
 def generate_email_alias():
     first_names_alias = ['Meena', 'Prunkesh', 'Alex', 'Emily', 'Chris', 'Laura']
@@ -287,8 +311,8 @@ def signup_twitter(driver, email_alias):
     human_delay()
     time.sleep(5)
 
-    #use_email_btn = wait.until(EC.element_to_be_clickable((By.XPATH, "//span[text()='Use email instead']")))
-    #use_email_btn.click()
+    use_email_btn = wait.until(EC.element_to_be_clickable((By.XPATH, "//span[text()='Use email instead']")))
+    use_email_btn.click()
     human_delay()
 
     email_field = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "input[name='email']")))

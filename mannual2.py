@@ -15,8 +15,8 @@ import pyttsx3
 
 
 # === PROXY CONFIGURATION ===
-PROXY_HOST = "82.23.75.80"
-PROXY_PORT = "6336"
+PROXY_HOST = "46.203.92.158"
+PROXY_PORT = "8155"
 PROXY_USER = "nftiuvfu"
 PROXY_PASS = "8ris7fu5rgrn"
 proxy_url = f"http://{PROXY_USER}:{PROXY_PASS}@{PROXY_HOST}:{PROXY_PORT}"
