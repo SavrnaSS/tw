@@ -1,112 +1,55 @@
 import time
 import random
-import string
 import re
 import os
-import json                             # added
-import base64                           # added
-import zipfile                          # added
 import requests
 import imaplib
 import email
-import email.utils
 from dotenv import load_dotenv
-import undetected_chromedriver as uc
+from seleniumwire import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException, NoSuchElementException, WebDriverException
+from selenium.common.exceptions import TimeoutException, WebDriverException
+import email.utils
+import pyttsx3
+import threading
 
 load_dotenv()
 
-# ---------------------------
-# Proxy settings (Authenticated)
-# ---------------------------
-PROXY_HOST = "82.24.61.83"
-PROXY_PORT = "6302"
-PROXY_USER = "nftiuvfu"
+# === PROXY CONFIGURATION ===
+PROXY_HOST = "p.webshare.io"
+PROXY_PORT = "80"
+PROXY_USER = "nftiuvfu-rotate"
 PROXY_PASS = "8ris7fu5rgrn"
+proxy_url = f"http://{PROXY_USER}:{PROXY_PASS}@{PROXY_HOST}:{PROXY_PORT}"
 
-def create_proxy_auth_extension(proxy_host, proxy_port, proxy_user, proxy_pass, plugin_path=None):
-    if not plugin_path:
-        plugin_path = f'proxy_auth_plugin_{random.randint(0,9999)}.zip'
-    # manifest.json
-    manifest_json = {
-      "version": "1.0.0",
-      "manifest_version": 2,
-      "name": "Chrome Proxy",
-      "permissions": [
-        "proxy","tabs","unlimitedStorage","storage",
-        "<all_urls>","webRequest","webRequestBlocking"
-      ],
-      "background": {"scripts": ["background.js"]}
-    }
-    # base64 credentials
-    creds_b64 = base64.b64encode(f"{proxy_user}:{proxy_pass}".encode()).decode()
-    # background.js
-    background_js = f"""
-var config = {{
-  mode: "fixed_servers",
-  rules: {{
-    singleProxy: {{ scheme: "http", host: "{proxy_host}", port: parseInt({proxy_port}) }},
-    bypassList: ["localhost"]
-  }}
-}};
-chrome.proxy.settings.set({{value: config, scope: "regular"}}, function(){{}});
-function callbackFn(details) {{
-  details.requestHeaders.push({{
-    name: "Proxy-Authorization",
-    value: "Basic {creds_b64}"
-  }});
-  return {{requestHeaders: details.requestHeaders}};
-}}
-chrome.webRequest.onBeforeSendHeaders.addListener(
-  callbackFn,
-  {{urls: ["<all_urls>"]}},
-  ["blocking","requestHeaders"]
-);
-"""
-    with zipfile.ZipFile(plugin_path, 'w') as zp:
-        zp.writestr("manifest.json", json.dumps(manifest_json))
-        zp.writestr("background.js", background_js)
-    return plugin_path
-
-# Create the extension once
-PROXY_EXTENSION = create_proxy_auth_extension(PROXY_HOST, PROXY_PORT, PROXY_USER, PROXY_PASS)
-
-# ---------------------------
-# Cloudflare API Config
-# ---------------------------
+# === Cloudflare API Config ===
 CLOUDFLARE_API_TOKEN = os.getenv("CLOUDFLARE_API_TOKEN")
 ACCOUNT_ID = os.getenv("CLOUDFLARE_ACCOUNT_ID")
 ZONE_ID = os.getenv("CLOUDFLARE_ZONE_ID")
-DESTINATION_EMAIL = os.getenv("DESTINATION_EMAIL")  # Your fixed destination email (e.g., Gmail)
+DESTINATION_EMAIL = os.getenv("DESTINATION_EMAIL")
 
-# ---------------------------
-# Gmail IMAP Config
-# ---------------------------
-GMAIL_EMAIL = os.getenv("GMAIL_EMAIL")  # Must match DESTINATION_EMAIL
-GMAIL_PASSWORD = os.getenv("GMAIL_PASSWORD")  # Use an app password for Gmail
+# === Gmail IMAP Config ===
+GMAIL_EMAIL = os.getenv("GMAIL_EMAIL")
+GMAIL_PASSWORD = os.getenv("GMAIL_PASSWORD")
 IMAP_SERVER = "imap.gmail.com"
 
-# ---------------------------
-# Twitter & Selenium Config
-# ---------------------------
+# === Twitter & File Config ===
 TWITTER_PASSWORD = "948332@1EB"
-PROFILE_PICTURE_PATH = os.path.abspath("pictures_selfie/selfie_2.jpg")
-BANNER_PICTURE_PATH = os.path.abspath("banner/selfie_3.jpg")
-GIF_PATH = os.path.abspath("gif/Happy Little Girl GIF by Demic.gif")
+profile_picture_paths = [os.path.abspath(f"profileselfie/selfie_{i}.jpg") for i in range(3, 10)]
+pic_index = 0
+BANNER_PICTURE_PATH = os.path.abspath("banner/selfie_7.jpg")
 
-if not os.path.exists(GIF_PATH):
-    print(f"❌ Error: GIF file not found at {GIF_PATH}")
-    exit(1)
+GIF_PATHS = [
+    os.path.abspath("Gif/Bop Nodding Head GIF by Demic.gif"),
+    # ... keep all your existing paths ...
+]
 
-# ---------------------------
-# Sample Names for Signup
-# ---------------------------
-first_names = ["Jennifer", "Samantha", "Alicia", "Laura", "Emma", "Sophia", "Ava", "Mia"]
-last_names = ["Jaatni", "Roy", "Brooks", "Patel", "Harris", "Carter", "Martin", "Thompson"]
+first_names = ["Emily", "Madison", "Hannah", "Ashley", "Sarah", "Taylor", "Jessica", "Elizabeth", "Kayla", "Rachel"]
+last_names = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Rodriguez", "Martinez"]
 
 # ---------------------------
 # Utility Functions
@@ -114,23 +57,61 @@ last_names = ["Jaatni", "Roy", "Brooks", "Patel", "Harris", "Carter", "Martin", 
 def human_delay(a=2, b=6):
     time.sleep(random.uniform(a, b))
 
+def test_proxy():
+    proxy = {"http": proxy_url, "https": proxy_url}
+    print("📡 Testing proxy connection (via requests)...")
+    try:
+        response = requests.get("http://api.ipify.org?format=json", proxies=proxy, timeout=10)
+        print(f"✅ Proxy is working. IP (via requests): {response.json()['ip']}")
+    except Exception as e:
+        raise Exception(f"❌ Proxy test failed: {e}")
+
+def check_browser_ip(driver):
+    print("🌐 Checking browser IP via Selenium...")
+    driver.get("http://api.ipify.org?format=json")
+    try:
+        ip = driver.find_element(By.TAG_NAME, "body").text
+        print(f"✅ Browser IP confirmed: {ip}")
+    except Exception as e:
+        print(f"❌ Could not determine browser IP: {e}")
+
+def setup_driver():
+    seleniumwire_options = {
+        'proxy': {'http': proxy_url, 'https': proxy_url, 'no_proxy': 'localhost,127.0.0.1'}
+    }
+
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_argument("--disable-blink-features=AutomationControlled")
+
+    driver_path = os.path.join(os.getcwd(), "chromedriver")
+
+    try:
+        driver = webdriver.Chrome(
+            service=Service(driver_path),
+            seleniumwire_options=seleniumwire_options,
+            options=chrome_options
+        )
+
+        print("🖥️ ChromeDriver launched in full desktop mode.")
+
+        return driver
+    except Exception as e:
+        raise Exception(f"❌ Failed to launch ChromeDriver: {e}")
+
 
 def generate_email_alias():
-    first_names_alias = ['Meena', 'Prunkesh', 'Alex', 'Emily', 'Chris', 'Laura']
-    last_names_alias = ['Singh', 'Alona', 'Johnson', 'Williams', 'Brown', 'Davis']
+    first_names_alias = ["Emily", "Madison", "Hannah", "Ashley", "Sarah", "Taylor", "Jessica", "Elizabeth", "Kayla", "Rachel"]
+    last_names_alias = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Rodriguez", "Martinez"]
     fname = random.choice(first_names_alias)
     lname = random.choice(last_names_alias)
     num = random.randint(1, 99)
-    email_alias = f"{fname}.{lname}{num}@deepictures.com"
-    print(f"📧 Generated email alias: {email_alias}")
-    return email_alias
+    alias = f"{fname}.{lname}{num}@deepictures.com"
+    print(f"📧 Generated email alias: {alias}")
+    return alias
 
 def create_cloudflare_address(email_alias):
     url = f"https://api.cloudflare.com/client/v4/accounts/{ACCOUNT_ID}/email/routing/addresses"
-    headers = {
-        "Authorization": f"Bearer {CLOUDFLARE_API_TOKEN}",
-        "Content-Type": "application/json"
-    }
+    headers = {"Authorization": f"Bearer {CLOUDFLARE_API_TOKEN}", "Content-Type": "application/json"}
     payload = {"email": email_alias}
     response = requests.post(url, headers=headers, json=payload)
     if response.status_code in [200, 201]:
@@ -140,17 +121,15 @@ def create_cloudflare_address(email_alias):
         print(f"❌ Failed to create Cloudflare Email Address: {response.text}")
         return None
 
-def get_existing_rules():
+# --- Functions to Manage Forwarding Rules ---
+def get_forwarding_rules():
     url = f"https://api.cloudflare.com/client/v4/zones/{ZONE_ID}/email/routing/rules"
-    headers = {
-        "Authorization": f"Bearer {CLOUDFLARE_API_TOKEN}",
-        "Content-Type": "application/json"
-    }
+    headers = {"Authorization": f"Bearer {CLOUDFLARE_API_TOKEN}", "Content-Type": "application/json"}
     response = requests.get(url, headers=headers)
     if response.status_code == 200:
         return response.json().get("result", [])
     else:
-        print(f"❌ Failed to fetch existing rules: {response.text}")
+        print(f"❌ Failed to fetch forwarding rules: {response.text}")
         return []
 
 def delete_forwarding_rule(rule_id):
@@ -159,12 +138,20 @@ def delete_forwarding_rule(rule_id):
     response = requests.delete(url, headers=headers)
     if response.status_code == 200:
         print(f"✅ Deleted forwarding rule: {rule_id}")
-        return True
     else:
-        print(f"❌ Failed to delete rule: {response.text}")
-        return False
+        print(f"❌ Failed to delete forwarding rule: {response.text}")
+
+def manage_forwarding_rules(max_rules=10):
+    rules = get_forwarding_rules()
+    if len(rules) >= max_rules:
+        rules.sort(key=lambda x: x.get("created_at", ""))
+        oldest_rule = rules[0]
+        delete_forwarding_rule(oldest_rule["id"])
+    else:
+        print(f"ℹ️ Current number of rules: {len(rules)} (limit: {max_rules})")
 
 def create_forwarding_rule(source_email, destination_email):
+    manage_forwarding_rules(max_rules=10)  # Adjust max_rules based on your Cloudflare plan
     url = f"https://api.cloudflare.com/client/v4/zones/{ZONE_ID}/email/routing/rules"
     headers = {"Authorization": f"Bearer {CLOUDFLARE_API_TOKEN}", "Content-Type": "application/json"}
     payload = {
@@ -176,17 +163,17 @@ def create_forwarding_rule(source_email, destination_email):
     response = requests.post(url, headers=headers, json=payload)
     if response.status_code in [200, 201]:
         print(f"✅ Created forwarding rule: {source_email} ➝ {destination_email}")
-        return True
     else:
         print(f"❌ Failed to create forwarding rule: {response.text}")
-        return False
 
 def get_latest_otp_imap():
     try:
+        print("📥 Connecting to IMAP server to fetch OTP...")
         mail = imaplib.IMAP4_SSL(IMAP_SERVER)
         mail.login(GMAIL_EMAIL, GMAIL_PASSWORD)
         mail.select("inbox")
-        status, data = mail.search(None, 'UNSEEN', 'X-GM-RAW', '"newer_than:2m (OTP OR verification OR \'one-time\')"')
+        status, data = mail.search(None, 'UNSEEN', 'X-GM-RAW',
+                                   '"newer_than:2m (OTP OR verification OR \'one-time\')"')
         if status != "OK":
             print("❌ IMAP search failed.")
             return None
@@ -195,7 +182,6 @@ def get_latest_otp_imap():
             print("❌ No new OTP emails found via IMAP.")
             mail.logout()
             return None
-
         emails_with_dates = []
         for e_id in email_ids:
             status, msg_data = mail.fetch(e_id, "(RFC822)")
@@ -204,16 +190,15 @@ def get_latest_otp_imap():
             for response_part in msg_data:
                 if isinstance(response_part, tuple):
                     msg = email.message_from_bytes(response_part[1])
-                    date_tuple = email.utils.parsedate_tz(msg["Date"])
-                    if date_tuple:
-                        timestamp = email.utils.mktime_tz(date_tuple)
+                    dt = email.utils.parsedate_tz(msg["Date"])
+                    if dt:
+                        timestamp = email.utils.mktime_tz(dt)
                         emails_with_dates.append((timestamp, e_id, msg))
         if not emails_with_dates:
             mail.logout()
             return None
-
         emails_with_dates.sort(key=lambda x: x[0], reverse=True)
-        latest_timestamp, latest_email_id, latest_msg = emails_with_dates[0]
+        _, latest_email_id, latest_msg = emails_with_dates[0]
         body = ""
         if latest_msg.is_multipart():
             for part in latest_msg.walk():
@@ -221,16 +206,18 @@ def get_latest_otp_imap():
                     body += part.get_payload(decode=True).decode(errors="ignore")
         else:
             body = latest_msg.get_payload(decode=True).decode(errors="ignore")
-        
+        print("📧 Raw email body (first 300 chars):")
+        print(body[:300])
         otp_match = re.search(r"\b(\d{6})\b", body)
         if otp_match:
             otp = otp_match.group(1)
+            print(f"✅ OTP Found: {otp}")
             mail.store(latest_email_id, '+FLAGS', '\\Deleted')
             mail.expunge()
             mail.logout()
             return otp
-
         mail.logout()
+        print("❌ OTP not found in the fetched email.")
         return None
     except Exception as e:
         print(f"❌ Error fetching OTP via IMAP: {e}")
@@ -240,36 +227,43 @@ def handle_locked_account(driver):
     wait = WebDriverWait(driver, 30)
     try:
         wait.until(EC.presence_of_element_located((By.XPATH, "//*[contains(text(), 'locked')]")))
+        print("⚠️ Locked account detected, proceeding with verification flow.")
     except TimeoutException:
+        print("✅ No locked account message found; skipping locked account flow.")
         return True
-
     try:
-        start_btn = wait.until(
-            EC.element_to_be_clickable((By.XPATH, "//input[@type='submit' and contains(@class, 'EdgeButton--primary') and (@value='Start' or @value='Continue to X')]"))
-        )
+        start_btn = wait.until(EC.element_to_be_clickable(
+            (By.XPATH, "//input[@type='submit' and contains(@class, 'EdgeButton--primary') and (@value='Start' or @value='Continue to X')]")
+        ))
         start_btn.click()
+        print("✅ Clicked the locked account flow start button.")
     except TimeoutException:
+        print("❌ Locked account start button not found; cannot proceed with locked account flow.")
         return False
-
     try:
-        send_email_btn = wait.until(
-            EC.element_to_be_clickable((By.XPATH, "//input[@type='submit' and @value='Send email']"))
+        send_email_btn = wait.until(EC.element_to_be_clickable(
+            (By.XPATH, "//input[@type='submit' and @value='Send email']"))
         )
         send_email_btn.click()
+        print("✅ Clicked 'Send email' button.")
     except TimeoutException:
+        print("❌ 'Send email' button not found.")
         return False
-
     otp = get_latest_otp_imap()
     if not otp:
+        print("❌ OTP not retrieved.")
         return False
-
+    print(f"✅ OTP retrieved: {otp}")
     try:
         token_field = wait.until(EC.presence_of_element_located((By.XPATH, "//input[@name='token']")))
         token_field.clear()
         token_field.send_keys(otp)
+        print("✅ Entered OTP into token field.")
         token_field.submit()
+        print("✅ Submitted OTP.")
         return True
     except TimeoutException:
+        print("❌ OTP token input field not found.")
         return False
 
 def signup_twitter(driver, email_alias):
@@ -302,6 +296,10 @@ def signup_twitter(driver, email_alias):
     human_delay()
     time.sleep(5)
 
+    use_email_btn = wait.until(EC.element_to_be_clickable((By.XPATH, "//span[text()='Use email instead']")))
+    use_email_btn.click()
+    human_delay()
+
     email_field = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "input[name='email']")))
     email_field.send_keys(email_alias)
     human_delay()
@@ -309,121 +307,202 @@ def signup_twitter(driver, email_alias):
     wait.until(EC.presence_of_element_located((By.XPATH, "//select[contains(@id, 'SELECTOR_1')]"))).send_keys("January")
     wait.until(EC.presence_of_element_located((By.XPATH, "//select[contains(@id, 'SELECTOR_2')]"))).send_keys("9")
     wait.until(EC.presence_of_element_located((By.XPATH, "//select[contains(@id, 'SELECTOR_3')]"))).send_keys("2002")
-    human_delay()
+    human_delay(3, 5)
 
-    for _ in range(3):
+    for _ in range(1):
         try:
             next_btn = wait.until(EC.element_to_be_clickable((By.XPATH, "//span[contains(text(),'Next')]")))
             next_btn.click()
             human_delay()
-            break
+            #input("✅ Press Enter after solving CAPTCHA...")
+            time.sleep(4)  # Wait for the page to update after solving
         except Exception:
             human_delay(2, 4)
+
+                      # Define the CSS selectors for the three checkboxes.
+    checkbox_selectors = [
+        "input[aria-describedby='CHECKBOX_1_LABEL']",
+        "input[aria-describedby='CHECKBOX_2_LABEL']",
+        "input[aria-describedby='CHECKBOX_3_LABEL']"
+     ]
+
+    # Iterate through each checkbox selector.
+    for selector in checkbox_selectors:
+       try:
+        # Use a short wait time since the checkboxes might not be present.
+           checkbox = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.CSS_SELECTOR, selector)))
+           if not checkbox.is_selected():
+               checkbox.click()
+               print(f"✅ Checked the checkbox with selector: {selector}")
+           else:
+            print(f"⚠️ Checkbox already checked: {selector}")
+           human_delay()
+       except TimeoutException:
+        # If the checkbox is not found, continue without error.
+        print(f"⚠️ Checkbox with selector {selector} did not appear.")
+
+    # After processing the checkboxes, click the "Next" button
+    try:
+           next_button = wait.until(EC.element_to_be_clickable((
+           By.XPATH, "//button[@data-testid='ocfSettingsListNextButton']"
+           )))
+           next_button.click()
+           print("✅ Clicked the Next button!")
+           time.sleep(5)
+           human_delay()
+    except TimeoutException as e:
+         print("⚠️ Next button not found:", e)
     return driver
 
 def verify_twitter(driver, email_alias, profile_pic_path=None):
-    wait = WebDriverWait(driver, 20)
+    wait = WebDriverWait(driver, 40)
+    def notify_captcha():
+        engine = pyttsx3.init()
+        engine.say("Please solve the CAPTCHA!")
+        engine.runAndWait()
+        wait_for_captcha_solution(driver)
+    try:
+        captcha_iframes = driver.find_elements(By.XPATH, "//iframe")
+        captcha_present = False
+        for iframe in captcha_iframes:
+            src = iframe.get_attribute("src")
+            if src and ("hcaptcha" in src.lower() or "recaptcha" in src.lower()):
+                captcha_present = True
+                break
+        page_text = driver.page_source.lower()
+        if any(keyword in page_text for keyword in ["captcha", "hcaptcha", "recaptcha", "verify you're a human"]):
+            captcha_present = True
+        if captcha_present:
+            print("⚠️ CAPTCHA detected! Please solve it manually.")
+            human_delay()
+            notify_captcha()
+        else:
+            print("✅ No CAPTCHA detected.")
+    except Exception as e:
+        print(f"❌ Error during CAPTCHA detection: {e}")
+        return
     otp = None
-    for attempt in range(10):
+    for attempt in range(20):
         otp = get_latest_otp_imap()
         if otp:
             break
+        print(f"⌛ Waiting for OTP... (Attempt {attempt + 1}/20)")
         human_delay(5, 7)
     if not otp:
+        print("❌ Failed to retrieve OTP.")
         return
-
-    otp_field = wait.until(EC.presence_of_element_located((By.NAME, "verfication_code")))
-    otp_field.send_keys(otp)
-    wait.until(EC.element_to_be_clickable((By.XPATH, "//span[text()='Next']"))).click()
-    human_delay()
-
-    password_field = wait.until(EC.presence_of_element_located((By.NAME, "password")))
-    password_field.send_keys(TWITTER_PASSWORD)
-    wait.until(EC.element_to_be_clickable((By.XPATH, "//span[text()='Sign up']"))).click()
-    human_delay(3, 5)
-
-    if profile_pic_path and os.path.exists(profile_pic_path):
-        try:
-            file_input = wait.until(EC.presence_of_element_located(
-                (By.XPATH, "//input[@type='file' and @accept='image/jpeg,image/png,image/webp']")
-            ))
-            driver.execute_script("arguments[0].style.display = 'block';", file_input)
-            file_input.send_keys(os.path.abspath(profile_pic_path))
-            wait.until(EC.element_to_be_clickable((By.XPATH, "//span[contains(text(),'Apply')]"))).click()
-            human_delay()
-            wait.until(EC.element_to_be_clickable((By.XPATH, "//span[text()='Next']"))).click()
-            human_delay()
-        except WebDriverException:
-            pass
-
-    username = wait.until(EC.presence_of_element_located((By.XPATH, "//input[@name='username']"))).get_attribute("value")
-    print(f"🎉 Created: {email_alias} / {TWITTER_PASSWORD} / @{username}")
-    with open("credentials.txt", "a") as f:
-        f.write(f"Email: {email_alias}\nPassword: {TWITTER_PASSWORD}\nUsername: {username}\n{'-'*40}\n")
-
-def login_twitter_simple(driver, email):
-    driver.get("https://twitter.com/login")
-    wait = WebDriverWait(driver, 30)
     try:
-        email_field = wait.until(EC.presence_of_element_located((By.XPATH, "//input[@autocomplete='username']")))
-        email_field.clear()
-        email_field.send_keys(email)
-        wait.until(EC.element_to_be_clickable((By.XPATH, "//span[contains(text(),'Next')]"))).click()
-        password_field = wait.until(EC.presence_of_element_located((By.XPATH, "//input[@autocomplete='current-password']")))
-        password_field.clear()
+        print("✍️ Entering OTP...")
+        otp_field = wait.until(EC.presence_of_element_located((By.NAME, "verfication_code")))
+        otp_field.send_keys(otp)
+        print("✅ OTP entered successfully!")
+        human_delay()
+        wait.until(EC.element_to_be_clickable((By.XPATH, "//span[text()='Next']"))).click()
+        print("✅ Proceeded past OTP screen.")
+        human_delay()
+        print("🔒 Setting up password...")
+        password_field = wait.until(EC.presence_of_element_located((By.NAME, "password")))
         password_field.send_keys(TWITTER_PASSWORD)
-        wait.until(EC.element_to_be_clickable((By.XPATH, "//span[contains(text(),'Log in')]"))).click()
-        time.sleep(5)
-    except Exception:
-        pass
+        print("✅ Password set.")
+        human_delay()
+        wait.until(EC.element_to_be_clickable((By.XPATH, "//span[text()='Sign up']"))).click()
+        print("✅ Account creation finalized.")
+        human_delay(3, 5)
+        if profile_pic_path and os.path.exists(profile_pic_path):
+            print("🖼️ Uploading profile picture...")
+            try:
+                file_input = wait.until(EC.presence_of_element_located((By.XPATH, "//input[@type='file' and @accept='image/jpeg,image/png,image/webp']")))
+                driver.execute_script("arguments[0].style.display = 'block';", file_input)
+                file_input.send_keys(os.path.abspath(profile_pic_path))
+                print("✅ Profile picture uploaded.")
+                human_delay()
+                time.sleep(3)
+                wait.until(EC.element_to_be_clickable((By.XPATH, "//span[contains(text(),'Apply')]"))).click()
+                print("✅ Clicked 'Apply' button.")
+                human_delay()
+                time.sleep(2)
+                wait.until(EC.element_to_be_clickable((By.XPATH, "//span[text()='Next']"))).click()
+                print("✅ Clicked 'Next' button after profile upload.")
+                human_delay()
+                time.sleep(5)
+            except WebDriverException as e:
+                print(f"❌ Profile picture upload failed: {e}")
+        elif profile_pic_path:
+            print(f"❌ Invalid profile path: {profile_pic_path}")
+        username_element = wait.until(EC.presence_of_element_located((By.XPATH, "//input[@name='username']")))
+        username = username_element.get_attribute("value")
+        print("\n🎉 Account creation completed!")
+        print(f"🔹 Email: {email_alias}")
+        print(f"🔹 Password: {TWITTER_PASSWORD}")
+        print(f"🔹 Username: {username}")
+        with open("credentials.txt", "a") as f:
+            f.write(f"Email: {email_alias}\n")
+            f.write(f"Password: {TWITTER_PASSWORD}\n")
+            f.write(f"Username: {username}\n")
+            f.write("-" * 40 + "\n")
+    except Exception as e:
+        print(f"❌ Error during verification: {e}")
+        driver.save_screenshot("error_screenshot.png")
+        print("📸 Saved error screenshot to error_screenshot.png")
 
-def logout_twitter(driver):
-    wait = WebDriverWait(driver, 20)
-    try:
-        driver.find_element(By.XPATH, "//button[@aria-label='Account menu']").click()
-        time.sleep(2)
-        driver.find_element(By.XPATH, "//a[@data-testid='AccountSwitcher_Logout_Button']").click()
-        driver.find_element(By.XPATH, "//span[contains(text(),'Log out')]").click()
-        time.sleep(5)
-    except Exception:
-        pass
+
+def wait_for_captcha_solution(driver):
+    time.sleep(12)  # Initial delay to allow the page to load
+    while True:
+        try:
+            captcha_present = False
+            iframes = driver.find_elements(By.TAG_NAME, "iframe")
+            for iframe in iframes:
+                src = iframe.get_attribute("src")
+                if src and "captcha" in src.lower():
+                    captcha_present = True
+                    break
+            if "Authenticate your account" in driver.page_source:
+                captcha_present = True
+            if not captcha_present:
+                print("✅ No CAPTCHA detected or already solved.")
+                break
+            else:
+                print("⚠️ CAPTCHA detected! Please solve it manually.")
+                os.system("say 'CAPTCHA detected, please solve it'")  # macOS sound notification
+                #input("✅ Press Enter after solving CAPTCHA...")
+                time.sleep(2)  # Wait for the page to update after solving
+        except Exception as e:
+            print(f"❌ Error checking CAPTCHA: {e}")
+            break
 
 if __name__ == "__main__":
+    i = 0  # Initialize i before the loop
     try:
         while True:
-            existing_rules = get_existing_rules()
-            if len(existing_rules) >= 10:
-                if delete_forwarding_rule(existing_rules[0]["id"]):
-                    pass
-                else:
-                    break
-
-            alias = generate_email_alias()
-            created_alias = create_cloudflare_address(alias) or alias
-
-            options = uc.ChromeOptions()
-            # now use extension instead of proxy_url
-            options.add_extension(PROXY_EXTENSION)
-            options.add_argument('--no-sandbox')
-            options.add_argument('--disable-dev-shm-usage')
-            driver = uc.Chrome(options=options)
-
+            driver = setup_driver()
+            gif_path = GIF_PATHS[i % len(GIF_PATHS)]
             try:
-                if create_forwarding_rule(created_alias, DESTINATION_EMAIL):
-                    driver.get("https://twitter.com/i/flow/signup")
-                    time.sleep(3)
-                    signup_twitter(driver, created_alias)
-                    verify_twitter(driver, created_alias, PROFILE_PICTURE_PATH)
-                    logout_twitter(driver)
-                    driver.delete_all_cookies()
-                else:
-                    print(f"⚠️ Skipping signup for {created_alias}")
+                test_proxy()
+                check_browser_ip(driver)
+                alias = generate_email_alias()
+                created_alias = create_cloudflare_address(alias)
+                if created_alias is None:
+                    print("⚠️ Falling back to generated alias.")
+                    created_alias = alias
+                create_forwarding_rule(created_alias, DESTINATION_EMAIL)
+                signup_twitter(driver, created_alias)
+                wait_for_captcha_solution(driver)
+                selected_profile_pic = profile_picture_paths[pic_index]
+                pic_index = (pic_index + 1) % len(profile_picture_paths)
+                verify_twitter(driver, created_alias, selected_profile_pic)
+                print(f"🎉 Account creation for {created_alias} completed.")
             except Exception as e:
                 print(f"❌ Error during account creation: {e}")
             finally:
-                driver.quit()
-            
-            time.sleep(10)
-
+                try:
+                    driver.quit()
+                    print("✅ Browser closed. Starting fresh for next account...")
+                except Exception:
+                    print("⚠️ Browser already closed or crashed.")
+                time.sleep(10)
+                i += 1  # Increment i for the next iteration
     except KeyboardInterrupt:
-        print("⏹ Stopped manually.")
+        print("⏹ Script stopped manually.")
+    except Exception as e:
+        print(f"❌ Error in main loop: {e}")

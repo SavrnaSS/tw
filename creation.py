@@ -101,7 +101,7 @@ def setup_driver():
                 driver.set_window_size(375, 812)
                 print("📏 Resized to mobile-like width after 1 minute.")
 
-                time.sleep(150)
+                time.sleep(200)
                 driver.maximize_window()  # back to full screen
                 print("🖥️ Restored to full desktop view after 2 minutes.")
             except Exception as e:
@@ -115,8 +115,8 @@ def setup_driver():
 
 
 def generate_email_alias():
-    first_names_alias = ['Meena', 'Prunkesh', 'Alex', 'Emily', 'Chris', 'Laura']
-    last_names_alias = ['Singh', 'Alona', 'Johnson', 'Williams', 'Brown', 'Davis']
+    first_names_alias = ["Emily", "Madison", "Hannah", "Ashley", "Sarah", "Taylor", "Jessica", "Elizabeth", "Kayla", "Rachel"]
+    last_names_alias = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Rodriguez", "Martinez"]
     fname = random.choice(first_names_alias)
     lname = random.choice(last_names_alias)
     num = random.randint(1, 99)
