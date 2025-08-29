@@ -15,9 +15,9 @@ import pyttsx3
 
 
 # === PROXY CONFIGURATION ===
-PROXY_HOST = "46.203.92.158"
-PROXY_PORT = "8155"
-PROXY_USER = "nftiuvfu"
+PROXY_HOST = "p.webshare.io"
+PROXY_PORT = "80"
+PROXY_USER = "nftiuvfu-rotate"
 PROXY_PASS = "8ris7fu5rgrn"
 proxy_url = f"http://{PROXY_USER}:{PROXY_PASS}@{PROXY_HOST}:{PROXY_PORT}"
 

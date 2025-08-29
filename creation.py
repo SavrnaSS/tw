@@ -48,8 +48,8 @@ GIF_PATHS = [
     # ... keep all your existing paths ...
 ]
 
-first_names = ["Emily", "Madison", "Hannah", "Ashley", "Sarah", "Taylor", "Jessica", "Elizabeth", "Kayla", "Rachel"]
-last_names = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Rodriguez", "Martinez"]
+first_names = ["Lily", "Chloe", "Grace", "Ella", "Nora", "Zoe", "Leah", "Avery", "Scarlett", "Violet"]
+last_names = ["Clark", "Lewis", "Young", "Allen", "King", "Wright", "Scott", "Torres", "Nguyen", "Hill"]
 
 # ---------------------------
 # Utility Functions
@@ -115,8 +115,8 @@ def setup_driver():
 
 
 def generate_email_alias():
-    first_names_alias = ["Emily", "Madison", "Hannah", "Ashley", "Sarah", "Taylor", "Jessica", "Elizabeth", "Kayla", "Rachel"]
-    last_names_alias = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Rodriguez", "Martinez"]
+    first_names_alias = ["Olivia", "Ava", "Sophia", "Isabella", "Mia", "Charlotte", "Amelia", "Evelyn", "Abigail", "Harper"]
+    last_names_alias = ["Anderson", "Thomas", "Jackson", "White", "Harris", "Martin", "Thompson", "Lee", "Walker", "Hall"]
     fname = random.choice(first_names_alias)
     lname = random.choice(last_names_alias)
     num = random.randint(1, 99)
@@ -191,7 +191,7 @@ def get_latest_otp_imap():
                                    '"newer_than:2m (OTP OR verification OR \'one-time\')"')
         if status != "OK":
             print("❌ IMAP search failed.")
-            return None
+            return None 
         email_ids = data[0].split()
         if not email_ids:
             print("❌ No new OTP emails found via IMAP.")
@@ -286,6 +286,7 @@ def signup_twitter(driver, email_alias):
     wait = WebDriverWait(driver, 30)
     human_delay()
 
+    # === Step 1: Find "Create account" button ===
     selectors = [
         "//span[contains(text(),'Create account')]",
         "//div[contains(text(),'Create account')]",
@@ -305,69 +306,90 @@ def signup_twitter(driver, email_alias):
     create_account_btn.click()
     human_delay()
 
+    # === Step 2: Fill Name ===
     name_field = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "input[name='name']")))
     random_full_name = f"{random.choice(first_names)} {random.choice(last_names)}"
     name_field.send_keys(random_full_name)
     human_delay()
     time.sleep(5)
 
-    use_email_btn = wait.until(EC.element_to_be_clickable((By.XPATH, "//span[text()='Use email instead']")))
-    use_email_btn.click()
-    human_delay()
+    # === Step 3: Use email instead ===
+    try:
+        use_email_btn = WebDriverWait(driver, 5).until(
+            EC.element_to_be_clickable((By.XPATH, "//span[text()='Use email instead']"))
+        )
+        use_email_btn.click()
+        print("✅ Clicked 'Use email instead'.")
+        human_delay()
+    except TimeoutException:
+        print("⚠️ 'Use email instead' not found, continuing...")
 
+    # === Step 4: Fill email ===
     email_field = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "input[name='email']")))
     email_field.send_keys(email_alias)
     human_delay()
 
+    # === Step 5: Fill Date of Birth ===
     wait.until(EC.presence_of_element_located((By.XPATH, "//select[contains(@id, 'SELECTOR_1')]"))).send_keys("January")
     wait.until(EC.presence_of_element_located((By.XPATH, "//select[contains(@id, 'SELECTOR_2')]"))).send_keys("9")
     wait.until(EC.presence_of_element_located((By.XPATH, "//select[contains(@id, 'SELECTOR_3')]"))).send_keys("2002")
     human_delay(3, 5)
 
-    for _ in range(1):
-        try:
-            next_btn = wait.until(EC.element_to_be_clickable((By.XPATH, "//span[contains(text(),'Next')]")))
-            next_btn.click()
-            human_delay()
-            #input("✅ Press Enter after solving CAPTCHA...")
-            time.sleep(4)  # Wait for the page to update after solving
-        except Exception:
-            human_delay(2, 4)
+    # === Step 6: Click "Next" once ===
+    try:
+        next_btn = wait.until(EC.element_to_be_clickable((By.XPATH, "//span[contains(text(),'Next')]")))
+        next_btn.click()
+        human_delay()
+        time.sleep(4)
+    except TimeoutException:
+        print("⚠️ 'Next' button not found after DOB step.")
 
-                      # Define the CSS selectors for the three checkboxes.
+    # === Step 7: Handle optional checkboxes ===
     checkbox_selectors = [
         "input[aria-describedby='CHECKBOX_1_LABEL']",
         "input[aria-describedby='CHECKBOX_2_LABEL']",
         "input[aria-describedby='CHECKBOX_3_LABEL']"
-     ]
-
-    # Iterate through each checkbox selector.
+    ]
     for selector in checkbox_selectors:
-       try:
-        # Use a short wait time since the checkboxes might not be present.
-           checkbox = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.CSS_SELECTOR, selector)))
-           if not checkbox.is_selected():
-               checkbox.click()
-               print(f"✅ Checked the checkbox with selector: {selector}")
-           else:
-            print(f"⚠️ Checkbox already checked: {selector}")
-           human_delay()
-       except TimeoutException:
-        # If the checkbox is not found, continue without error.
-        print(f"⚠️ Checkbox with selector {selector} did not appear.")
+        try:
+            checkbox = WebDriverWait(driver, 5).until(
+                EC.presence_of_element_located((By.CSS_SELECTOR, selector))
+            )
+            if not checkbox.is_selected():
+                checkbox.click()
+                print(f"✅ Checked: {selector}")
+            else:
+                print(f"⚠️ Already checked: {selector}")
+            human_delay()
+        except TimeoutException:
+            print(f"⚠️ Checkbox not found: {selector}")
 
-    # After processing the checkboxes, click the "Next" button
+    # === Step 8: Click "Next" after checkboxes ===
     try:
-           next_button = wait.until(EC.element_to_be_clickable((
-           By.XPATH, "//button[@data-testid='ocfSettingsListNextButton']"
-           )))
-           next_button.click()
-           print("✅ Clicked the Next button!")
-           time.sleep(5)
-           human_delay()
+        next_button = wait.until(EC.element_to_be_clickable(
+            (By.XPATH, "//button[@data-testid='ocfSettingsListNextButton']")
+        ))
+        next_button.click()
+        print("✅ Clicked the final Next button!")
+        time.sleep(5)
+        human_delay()
     except TimeoutException as e:
-         print("⚠️ Next button not found:", e)
+        print("⚠️ Final 'Next' button not found:", e)
+
+    # === Step 9: Bounce-back safety check ===
+    try:
+        bounced = WebDriverWait(driver, 5).until(
+            EC.presence_of_element_located((By.XPATH, "//span[text()='Create your account']"))
+        )
+        if bounced:
+            print("❌ Twitter blocked signup and redirected back to 'Create your account'. Restarting browser...")
+            driver.quit()   # close Chrome session
+            return None     # signal caller to start fresh
+    except TimeoutException:
+        print("✅ Not bounced back, continuing flow...")
+
     return driver
+
 
 def verify_twitter(driver, email_alias, profile_pic_path=None):
     wait = WebDriverWait(driver, 40)
@@ -488,6 +510,7 @@ def wait_for_captcha_solution(driver):
 
 if __name__ == "__main__":
     i = 0  # Initialize i before the loop
+    pic_index = 0  # ensure pic_index starts here
     try:
         while True:
             driver = setup_driver()
@@ -501,12 +524,21 @@ if __name__ == "__main__":
                     print("⚠️ Falling back to generated alias.")
                     created_alias = alias
                 create_forwarding_rule(created_alias, DESTINATION_EMAIL)
-                signup_twitter(driver, created_alias)
+
+                # Call signup
+                result = signup_twitter(driver, created_alias)
+                if result is None:
+                    # signup_twitter already closed driver on bounce-back
+                    print("🔄 Restarting signup due to bounce-back issue...")
+                    continue  # go back to loop, new driver will be created
+
+                # If signup succeeded, continue normal flow
                 wait_for_captcha_solution(driver)
                 selected_profile_pic = profile_picture_paths[pic_index]
                 pic_index = (pic_index + 1) % len(profile_picture_paths)
                 verify_twitter(driver, created_alias, selected_profile_pic)
                 print(f"🎉 Account creation for {created_alias} completed.")
+
             except Exception as e:
                 print(f"❌ Error during account creation: {e}")
             finally:

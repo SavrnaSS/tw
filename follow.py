@@ -139,7 +139,6 @@ def read_credentials(file_path="1st_step.txt"):
     if block:
         credentials.append(block)
     return credentials
-
 def login_twitter(driver, email, twitter_password, user):
     """
     Logs into Twitter and handles additional verification steps.
