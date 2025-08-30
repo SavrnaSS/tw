@@ -15,10 +15,10 @@ import pyttsx3
 
 
 # === PROXY CONFIGURATION ===
-PROXY_HOST = "p.webshare.io"
-PROXY_PORT = "80"
-PROXY_USER = "nftiuvfu-rotate"
-PROXY_PASS = "8ris7fu5rgrn"
+PROXY_HOST = "pr.lunaproxy.com"
+PROXY_PORT = "12233"
+PROXY_USER = "user-cy3fofcc72wf"
+PROXY_PASS = "Zepi9bqXf7eX3"
 proxy_url = f"http://{PROXY_USER}:{PROXY_PASS}@{PROXY_HOST}:{PROXY_PORT}"
 
 
