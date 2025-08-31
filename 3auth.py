@@ -139,17 +139,14 @@ def read_credentials(file_path="1st_step.txt"):
     if block:
         credentials.append(block)
     return credentials
-
 def login_twitter(driver, email, twitter_password, user):
     """
     Logs into Twitter and handles additional verification steps.
-    If an OTP confirmation page is detected, the function fetches the OTP from Gmail,
-    enters it into the confirmation code input (using data-testid="ocfEnterTextTextInput"),
-    and proceeds.
+    If an OTP or email confirmation page is detected, the function handles it.
     """
     driver.get("https://twitter.com/login")
     wait = WebDriverWait(driver, 80)
-    
+
     try:
         print("\n🔑 Logging into Twitter...")
 
@@ -167,9 +164,9 @@ def login_twitter(driver, email, twitter_password, user):
         )
         next_btn.click()
         print("✅ Clicked 'Next'.")
-        time.sleep(3)
+        time.sleep(2)
 
-        # 3. Check for additional verification prompt (phone/email)
+        # 3. Handle additional verification (phone/email)
         try:
             phone_or_username_field = wait.until(
                 EC.presence_of_element_located((By.CSS_SELECTOR, "input[data-testid='ocfEnterTextTextInput']"))
@@ -183,6 +180,7 @@ def login_twitter(driver, email, twitter_password, user):
             )
             next_button_2.click()
             print("✅ Submitted phone/email verification.")
+            time.sleep(2)
         except TimeoutException:
             print("✅ No additional verification prompt detected, continuing...")
 
@@ -201,26 +199,42 @@ def login_twitter(driver, email, twitter_password, user):
         login_btn.click()
         print("🎉 Login submitted!")
         time.sleep(5)
-      
-        # 6. Check if an OTP confirmation page is presented
+
+        # 6. Handle potential email verification page after password
         try:
-            # Look for a message indicating that a confirmation code has been sent
-            otp_prompt = WebDriverWait(driver, 10).until(
+            email_verification_field = WebDriverWait(driver, 5).until(
+                EC.presence_of_element_located(
+                    (By.XPATH, "//span[text()='Email address']/ancestor::div/following-sibling::div//input")
+                )
+            )
+            email_verification_field.clear()
+            email_verification_field.send_keys(email)
+            print(f"✅ Entered email on post-password verification page: {email}")
+
+            next_button_3 = wait.until(
+                EC.element_to_be_clickable((By.XPATH, "//span[contains(text(),'Next')]"))
+            )
+            next_button_3.click()
+            print("✅ Submitted email verification, continuing login flow.")
+            time.sleep(3)
+        except TimeoutException:
+            print("✅ No post-password email verification detected; continuing normally.")
+
+        # 7. Check if an OTP confirmation page is presented
+        try:
+            otp_prompt = WebDriverWait(driver, 5).until(
                 EC.presence_of_element_located((By.XPATH, "//*[contains(text(),'Check your email')]"))
             )
             print("📧 Email OTP prompt detected. Fetching OTP from Gmail...")
             otp = get_latest_otp_imap()
             if otp:
-                # Locate the confirmation code input field using its data-testid
                 otp_field = wait.until(
-                    EC.presence_of_element_located(
-                        (By.XPATH, "//input[@data-testid='ocfEnterTextTextInput']")
-                    )
+                    EC.presence_of_element_located((By.XPATH, "//input[@data-testid='ocfEnterTextTextInput']"))
                 )
                 otp_field.clear()
                 otp_field.send_keys(otp)
                 print("✅ Entered OTP into confirmation code input.")
-                # Locate and click the Next button to submit the OTP
+
                 submit_btn = wait.until(
                     EC.element_to_be_clickable((By.XPATH, "//span[contains(text(),'Next')]"))
                 )
@@ -230,10 +244,11 @@ def login_twitter(driver, email, twitter_password, user):
             else:
                 print("❌ OTP was not retrieved from Gmail.")
         except TimeoutException:
-            print("✅ No email OTP prompt detected; continuing normally.")
+            print("✅ No email OTP prompt detected; login completed normally.")
 
     except Exception as e:
         print(f"❌ Error during login flow: {e}")
+
 
 def get_latest_otp_imap():
     try:
