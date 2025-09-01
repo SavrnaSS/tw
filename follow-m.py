@@ -47,7 +47,7 @@ bio_messages = [
 
 # List of Twitter accounts to follow
 accounts_to_follow = [
-    "onlyarcadeace", "alviachokelal", "cliftymarie", "agniys", "devohconcept", "oviedolewis"
+    "onlyarcadeace", "alviachokelal", "cliftymarie", "agniys", "devohconcept", "oviedolewis", "AlyssaCart91902", "garcia_hal41935"
 ]
 
 def notify_captcha():
