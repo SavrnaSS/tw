@@ -139,6 +139,7 @@ def read_credentials(file_path="1st_step.txt"):
     if block:
         credentials.append(block)
     return credentials
+
 def login_twitter(driver, email, twitter_password, user):
     """
     Logs into Twitter and handles additional verification steps.
@@ -438,14 +439,14 @@ def follow_accounts(driver):
         return False
     
 if __name__ == "__main__":
-    creds = read_credentials("comp-cred.txt")
+    creds = read_credentials("done.txt")
     total_accounts = len(creds)
     print(f"📋 Found {total_accounts} credential sets.")
 
-    account_count = 0  # Initialize the counter
+    account_count = 0  # Initialize the counter 
 
     # Open the completed.txt file in append mode
-    with open("comp-cred.txt", "a") as completed_file:
+    with open("done.txt", "a") as completed_file:
         for cred in creds:
             account_count += 1  # Increment the counter
             user_email = cred.get("email")

@@ -39,7 +39,7 @@ IMAP_SERVER = "imap.gmail.com"
 
 # === Twitter & File Config ===
 TWITTER_PASSWORD = "948332@1EB"
-profile_picture_paths = [os.path.abspath(f"profileselfie/selfie_{i}.jpg") for i in range(3, 10)]
+profile_picture_paths = [os.path.abspath(f"profileselfie/selfie_{i}.jpg") for i in range(1, 199)]
 pic_index = 0
 BANNER_PICTURE_PATH = os.path.abspath("banner/selfie_7.jpg")
 
@@ -48,8 +48,8 @@ GIF_PATHS = [
     # ... keep all your existing paths ...
 ]
 
-first_names = ["Lily", "Chloe", "Grace", "Ella", "Nora", "Zoe", "Leah", "Avery", "Scarlett", "Violet"]
-last_names = ["Clark", "Lewis", "Young", "Allen", "King", "Wright", "Scott", "Torres", "Nguyen", "Hill"]
+first_names = ["Anna", "Lea", "Lena", "Sophie", "Mia", "Emma", "Johanna", "Hannah", "Clara", "Luisa"]
+last_names = ["Müller", "Schmidt", "Schneider", "Fischer", "Weber", "Wagner", "Becker", "Hoffmann", "Keller", "Schäfer"]
 
 # ---------------------------
 # Utility Functions
@@ -100,12 +100,12 @@ def setup_driver():
 
 
 def generate_email_alias():
-    first_names_alias = ["Olivia", "Ava", "Sophia", "Isabella", "Mia", "Charlotte", "Amelia", "Evelyn", "Abigail", "Harper"]
-    last_names_alias = ["Anderson", "Thomas", "Jackson", "White", "Harris", "Martin", "Thompson", "Lee", "Walker", "Hall"]
+    first_names_alias = ["Greta", "Isabell", "Katharina", "Marlene", "Helena", "Paula", "Fiona", "Lara", "Annalena", "Milena"]
+    last_names_alias = ["Konig", "Vogel", "Scholz", "Fuchs", "Brandt", "Bohm", "Kruger", "Busch", "Seidel", "Hartmann"]
     fname = random.choice(first_names_alias)
     lname = random.choice(last_names_alias)
     num = random.randint(1, 99)
-    alias = f"{fname}.{lname}{num}@deepictures.com"
+    alias = f"{fname}.{lname}{num}@ndxglobe.com"
     print(f"📧 Generated email alias: {alias}")
     return alias
 
